@@ -7,8 +7,17 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:layout_width="wrap_content"
+        android:id="@+id/statusIsRooted"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="is_rooted" />
+        android:text="루팅 탐지 상태"
+        android:textSize="18sp"
+        android:padding="16dp" />
+
+    <Button
+        android:id="@+id/rootCheckButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="루팅 상태 확인" />
 
 </RelativeLayout>
