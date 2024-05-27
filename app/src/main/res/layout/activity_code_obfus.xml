@@ -7,8 +7,17 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:layout_width="wrap_content"
+        android:id="@+id/statusIsObfus"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="code_obfuscation" />
+        android:text="난독화 상태"
+        android:textSize="18sp"
+        android:padding="16dp" />
+
+    <Button
+        android:id="@+id/checkObfuscationButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="난독화 상태 확인" />
 
 </RelativeLayout>
