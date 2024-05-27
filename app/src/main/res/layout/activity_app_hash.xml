@@ -7,8 +7,17 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:layout_width="wrap_content"
+        android:id="@+id/statusIsHash"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="app_hash" />
+        android:text="무결성 검증 상태"
+        android:textSize="18sp"
+        android:padding="16dp" />
+
+    <Button
+        android:id="@+id/checkIntegrityButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="무결성 검증" />
 
 </RelativeLayout>
