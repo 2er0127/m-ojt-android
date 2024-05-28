@@ -1,14 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
-    tools:context=".MainActivity">
+    android:orientation="vertical"
+    android:padding="16dp">
 
     <TextView
-        android:layout_width="wrap_content"
+        android:id="@+id/infoTextView"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="shared_preferences" />
+        android:text="단말기 내 중요정보 저장 여부 실습"
+        android:textSize="18sp"
+        android:padding="16dp" />
 
-</RelativeLayout>
+    <EditText
+        android:id="@+id/usernameEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="아이디" />
+
+    <EditText
+        android:id="@+id/passwordEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="비밀번호"
+        android:inputType="textPassword" />
+
+    <Button
+        android:id="@+id/saveButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="저장" />
+
+    <Button
+        android:id="@+id/loadButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="불러오기" />
+
+    <TextView
+        android:id="@+id/displayTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="저장된 정보가 여기에 표시됩니다."
+        android:textSize="16sp"
+        android:padding="16dp" />
+</LinearLayout>
