@@ -9,7 +9,7 @@
         android:id="@+id/infoTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="단말기 내 중요정보 저장 여부 실습"
+        android:text="단말기 및 소스코드 내 중요정보 노출 여부 실습"
         android:textSize="18sp"
         android:padding="16dp" />
 
