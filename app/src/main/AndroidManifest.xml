@@ -29,6 +29,7 @@
         <activity android:name=".SharedPreActivity"/>
         <activity android:name=".ExportedActivity"/>
         <activity android:name=".DebugActivity"/>
+        <activity android:name=".AdminActivity" android:exported="true"/>
     </application>
 
 </manifest>
