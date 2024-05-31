@@ -6,15 +6,15 @@
     android:padding="16dp">
 
     <TextView
-        android:id="@+id/statusTextView"
+        android:id="@+id/statusIsRooted"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="OS 변조 탐지 기능 적용 여부"
+        android:text="OS 변조 탐지 기능 적용 여부 실습"
         android:textSize="18sp"
         android:padding="16dp" />
 
     <Button
-        android:id="@+id/checkRootButton"
+        android:id="@+id/rootCheckButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="루팅 상태 확인" />

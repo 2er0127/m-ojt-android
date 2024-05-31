@@ -6,10 +6,10 @@
     android:padding="16dp">
 
     <TextView
-        android:id="@+id/statusTextView"
+        android:id="@+id/statusIsObfus"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="소스코드 난독화 적용 여부"
+        android:text="소스코드 난독화 적용 여부 실습"
         android:textSize="18sp"
         android:padding="16dp" />
 
