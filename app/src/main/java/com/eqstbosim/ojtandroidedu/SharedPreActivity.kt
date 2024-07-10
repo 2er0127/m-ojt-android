@@ -1,6 +1,5 @@
 package com.eqstbosim.ojtandroidedu
 
-import android.content.Context
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
@@ -8,6 +7,9 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
 class SharedPreActivity : AppCompatActivity() {
+
+    private lateinit var db: UserDatabase
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_shared_pre)
@@ -18,26 +20,27 @@ class SharedPreActivity : AppCompatActivity() {
         val loadButton: Button = findViewById(R.id.loadButton)
         val displayTextView: TextView = findViewById(R.id.displayTextView)
 
-        val sharedPreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)
+        db = UserDatabase(this)
 
         saveButton.setOnClickListener {
             val username = usernameEditText.text.toString()
             val password = passwordEditText.text.toString()
 
-            with(sharedPreferences.edit()) {
-                putString("username", username)
-                putString("password", password)
-                apply()
-            }
+            val user = User(username, password)
+            db.addUser(user)
 
             displayTextView.text = "정보가 저장되었습니다."
         }
 
         loadButton.setOnClickListener {
-            val username = sharedPreferences.getString("username", "저장된 아이디가 없습니다.")
-            val password = sharedPreferences.getString("password", "저장된 비밀번호가 없습니다.")
+            val username = usernameEditText.text.toString()
+            val user = db.getUser(username)
 
-            displayTextView.text = "저장된 아이디: $username\n저장된 비밀번호: $password"
+            if (user != null) {
+                displayTextView.text = "아이디: ${user.username}\n비밀번호: ${user.password}"
+            } else {
+                displayTextView.text = "저장된 아이디가 없습니다."
+            }
         }
     }
 }
