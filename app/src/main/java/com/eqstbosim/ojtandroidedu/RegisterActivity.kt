@@ -29,11 +29,13 @@ class RegisterActivity : AppCompatActivity() {
             val password = passwordEditText.text.toString()
 
             if (username.isNotEmpty() && password.isNotEmpty()) {
-                val user = User(username, password)
-                userDatabase.addUser(user)
-
-                Toast.makeText(this, "회원가입 성공", Toast.LENGTH_SHORT).show()
-                finish()
+                if (userDatabase.isUserExists(username)) {
+                    Toast.makeText(this, "이미 존재하는 사용자명입니다.", Toast.LENGTH_SHORT).show()
+                } else {
+                    userDatabase.addUser(User(username, password))
+                    Toast.makeText(this, "회원가입 성공", Toast.LENGTH_SHORT).show()
+                    finish()
+                }
             } else {
                 Toast.makeText(this, "모든 필드를 채워주세요.", Toast.LENGTH_SHORT).show()
             }

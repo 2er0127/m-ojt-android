@@ -20,12 +20,16 @@ class ExportedActivity : AppCompatActivity() {
         val passwordEditText: EditText = findViewById(R.id.adminPasswordEditText)
         val loginButton: Button = findViewById(R.id.loginButton)
 
+        val userDatabase = UserDatabase(this)
+
         loginButton.setOnClickListener {
             val username = usernameEditText.text.toString()
             val password = passwordEditText.text.toString()
 
-            if (username == "admin" && password == "1q2w3e4r5t!@oz") {
-                val intent = Intent(this, AdminActivity::class.java)
+            val user = userDatabase.getUser(username)
+
+            if (user != null && user.username == "admin" && user.password == password) {
+                val intent = Intent(this, UserListActivity::class.java)
                 startActivity(intent)
             } else {
                 Toast.makeText(this, "로그인 실패", Toast.LENGTH_SHORT).show()

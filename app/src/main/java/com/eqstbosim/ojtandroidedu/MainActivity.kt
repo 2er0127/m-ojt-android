@@ -4,20 +4,21 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
+import android.widget.LinearLayout
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
-// Seona Lee
-// EQST Bosim OJT Android Edu 2024.
 class MainActivity : AppCompatActivity() {
+    private lateinit var loggedInUserTextView: TextView
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        /*if (isDeviceRooted()) {
-            Toast.makeText(this, "루팅된 기기는 앱을 실행할 수 없습니다.", Toast.LENGTH_LONG).show()
-            finish()
-        }*/
+        loggedInUserTextView = findViewById(R.id.loggedInUserTextView)
+
+        val username = intent.getStringExtra("username") ?: ""
+        loggedInUserTextView.text = "현재 ${username} 사용자가 로그인 중입니다."
 
         val button1: Button = findViewById(R.id.button1)
         val button2: Button = findViewById(R.id.button2)
@@ -27,7 +28,6 @@ class MainActivity : AppCompatActivity() {
         val button6: Button = findViewById(R.id.button6)
         val button7: Button = findViewById(R.id.button7)
         val button8: Button = findViewById(R.id.button8)
-        val viewUsersButton: Button = findViewById(R.id.viewUsersButton)
 
         button1.setOnClickListener { startButton1Activity() }
         button2.setOnClickListener { startButton2Activity() }
@@ -37,7 +37,14 @@ class MainActivity : AppCompatActivity() {
         button6.setOnClickListener { startButton6Activity() }
         button7.setOnClickListener { startButton7Activity() }
         button8.setOnClickListener { startButton8Activity() }
-        viewUsersButton.setOnClickListener { startUserListActivity() }
+
+        if (username == "admin") {
+            val userListButton = Button(this).apply {
+                text = "User List"
+                setOnClickListener { startUserListActivity() }
+            }
+            findViewById<LinearLayout>(R.id.buttonContainer).addView(userListButton)
+        }
     }
 
     private fun startButton1Activity() {
@@ -56,7 +63,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun startButton4Activity() {
-        val intent = Intent(this, DebugActivity::class.java)
+        val intent = Intent(this, SharedPreActivity::class.java)
         startActivity(intent)
     }
 
@@ -66,12 +73,12 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun startButton6Activity() {
-        val intent = Intent(this, FlagSecureActivity::class.java)
+        val intent = Intent(this, DebugActivity::class.java)
         startActivity(intent)
     }
 
     private fun startButton7Activity() {
-        val intent = Intent(this, SharedPreActivity::class.java)
+        val intent = Intent(this, FlagSecureActivity::class.java)
         startActivity(intent)
     }
 
@@ -85,4 +92,3 @@ class MainActivity : AppCompatActivity() {
         startActivity(intent)
     }
 }
-

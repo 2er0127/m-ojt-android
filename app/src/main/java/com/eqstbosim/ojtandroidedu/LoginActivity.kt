@@ -9,19 +9,16 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
 class LoginActivity : AppCompatActivity() {
-
-    private lateinit var userDatabase: UserDatabase
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
-
-        userDatabase = UserDatabase(this)
 
         val usernameEditText: EditText = findViewById(R.id.usernameEditText)
         val passwordEditText: EditText = findViewById(R.id.passwordEditText)
         val loginButton: Button = findViewById(R.id.loginButton)
         val registerTextView: TextView = findViewById(R.id.registerTextView)
+
+        val userDatabase = UserDatabase(this)
 
         loginButton.setOnClickListener {
             val username = usernameEditText.text.toString()
@@ -30,7 +27,9 @@ class LoginActivity : AppCompatActivity() {
             val user = userDatabase.getUser(username)
 
             if (user != null && user.password == password) {
-                val intent = Intent(this, MainActivity::class.java)
+                val intent = Intent(this, MainActivity::class.java).apply {
+                    putExtra("username", username)
+                }
                 startActivity(intent)
                 finish()
             } else {
@@ -42,10 +41,5 @@ class LoginActivity : AppCompatActivity() {
             val intent = Intent(this, RegisterActivity::class.java)
             startActivity(intent)
         }
-    }
-
-    override fun onDestroy() {
-        userDatabase.close()
-        super.onDestroy()
     }
 }

@@ -68,4 +68,12 @@ class UserDatabase(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, 
         db.delete(TABLE_USERS, "$KEY_USERNAME=?", arrayOf(username))
         db.close()
     }
+
+    fun isUserExists(username: String): Boolean {
+        val db = this.readableDatabase
+        val cursor: Cursor? = db.query(TABLE_USERS, arrayOf(KEY_USERNAME), "$KEY_USERNAME=?", arrayOf(username), null, null, null, null)
+        val exists = cursor != null && cursor.moveToFirst()
+        cursor?.close()
+        return exists
+    }
 }
