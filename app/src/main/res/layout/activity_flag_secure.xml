@@ -25,4 +25,12 @@
         android:layout_height="wrap_content"
         android:text="화면 보호 비활성화" />
 
+    <TextView
+        android:id="@+id/simTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="중요정보\n현재 로그인된 아이디: EQST\n비밀번호: EQST****"
+        android:textSize="16sp"
+        android:padding="16dp" />
+
 </LinearLayout>
