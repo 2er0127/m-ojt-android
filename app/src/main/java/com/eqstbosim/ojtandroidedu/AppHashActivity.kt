@@ -1,12 +1,10 @@
-package com.example.ojtandroiddev
+package com.eqstbosim.ojtandroidedu
 
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import java.io.File
-import java.io.FileInputStream
 import java.security.MessageDigest
 import java.util.zip.ZipFile
 

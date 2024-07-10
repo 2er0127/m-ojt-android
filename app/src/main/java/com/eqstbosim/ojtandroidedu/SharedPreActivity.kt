@@ -1,4 +1,4 @@
-package com.example.ojtandroiddev
+package com.eqstbosim.ojtandroidedu
 
 import android.content.Context
 import android.os.Bundle

@@ -1,4 +1,4 @@
-package com.example.ojtandroiddev
+package com.eqstbosim.ojtandroidedu
 
 import android.annotation.SuppressLint
 import android.content.Intent

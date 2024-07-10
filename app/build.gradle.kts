@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.ojtandroiddev"
+    namespace = "com.eqstbosim.ojtandroidedu"
     compileSdk = 33
 
     defaultConfig {
-        applicationId = "com.example.ojtandroiddev"
+        applicationId = "com.eqstbosim.ojtandroidedu"
         minSdk = 24
         targetSdk = 33
         versionCode = 1

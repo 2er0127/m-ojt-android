@@ -1,4 +1,4 @@
-package com.example.ojtandroiddev
+package com.eqstbosim.ojtandroidedu
 
 import android.os.Bundle
 import android.widget.Button
