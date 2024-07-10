@@ -13,5 +13,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "OJT Android dev"
+rootProject.name = "EQST_bosim_android_edu"
 include(":app")

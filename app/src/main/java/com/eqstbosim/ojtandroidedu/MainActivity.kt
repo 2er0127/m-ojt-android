@@ -52,7 +52,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun startButton4Activity() {
-        val intent = Intent(this, SharedPreActivity::class.java)
+        val intent = Intent(this, DebugActivity::class.java)
         startActivity(intent)
     }
 
@@ -62,12 +62,12 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun startButton6Activity() {
-        val intent = Intent(this, DebugActivity::class.java)
+        val intent = Intent(this, FlagSecureActivity::class.java)
         startActivity(intent)
     }
 
     private fun startButton7Activity() {
-        val intent = Intent(this, FlagSecureActivity::class.java)
+        val intent = Intent(this, SharedPreActivity::class.java)
         startActivity(intent)
     }
 
