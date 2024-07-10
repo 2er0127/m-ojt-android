@@ -8,6 +8,8 @@ import androidx.appcompat.app.AppCompatActivity
 import java.security.MessageDigest
 import java.util.zip.ZipFile
 
+// Seona Lee
+// EQST Bosim OJT Android Edu 2024.
 class AppHashActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

@@ -5,6 +5,8 @@ import android.os.Bundle
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
+// Seona Lee
+// EQST Bosim OJT Android Edu 2024.
 class AdminActivity : AppCompatActivity() {
 
     @SuppressLint("MissingInflatedId")

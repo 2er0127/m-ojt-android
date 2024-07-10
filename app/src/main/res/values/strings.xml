@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">OJT Android dev</string>
+    <string name="app_name">EQST_bosim_android_edu</string>
     <string name="action_settings">Settings</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>

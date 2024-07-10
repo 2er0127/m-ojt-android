@@ -6,6 +6,8 @@ import android.widget.EditText
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
+// Seona Lee
+// EQST Bosim OJT Android Edu 2024.
 class SharedPreActivity : AppCompatActivity() {
 
     private lateinit var db: UserDatabase

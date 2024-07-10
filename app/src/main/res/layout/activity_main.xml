@@ -20,8 +20,9 @@
     <ScrollView
         android:id="@+id/buttonScrollView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_below="@id/imageView"
+        android:layout_above="@id/footerTextView"
         android:layout_centerHorizontal="true">
 
         <LinearLayout
@@ -94,4 +95,15 @@
                 android:layout_marginBottom="8dp" />
         </LinearLayout>
     </ScrollView>
+
+    <TextView
+        android:id="@+id/footerTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="EQST Bosim 2024."
+        android:textSize="14sp"
+        android:padding="16dp"
+        android:gravity="center"
+        android:layout_alignParentBottom="true" />
+
 </RelativeLayout>

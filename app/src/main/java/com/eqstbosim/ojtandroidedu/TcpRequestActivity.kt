@@ -15,6 +15,8 @@ import java.net.ServerSocket
 import java.net.Socket
 import java.util.concurrent.Executors
 
+// Seona Lee
+// EQST Bosim OJT Android Edu 2024.
 class TcpRequestActivity : AppCompatActivity() {
 
     private val serverPort = 12345
