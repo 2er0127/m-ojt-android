@@ -17,72 +17,81 @@
         android:scaleType="centerCrop"
         android:layout_marginBottom="16dp"/>
 
-    <GridLayout
-        android:id="@+id/buttonGrid"
-        android:layout_width="wrap_content"
+    <ScrollView
+        android:id="@+id/buttonScrollView"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/imageView"
-        android:layout_centerHorizontal="true"
-        android:columnCount="3"
-        android:rowCount="2"
-        android:useDefaultMargins="true">
+        android:layout_centerHorizontal="true">
 
-        <Button
-            android:id="@+id/button1"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/btn_blue"
-            android:text="Button 1" />
+            android:orientation="vertical">
 
-        <Button
-            android:id="@+id/button2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Button 2"
-            android:background="@drawable/btn_blue" />
+            <Button
+                android:id="@+id/button1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/btn_blue"
+                android:text="Q1. OS 변조 탐지 기능 적용 여부"
+                android:layout_marginBottom="8dp" />
 
-        <Button
-            android:id="@+id/button3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Button 3"
-            android:background="@drawable/btn_blue"/>
+            <Button
+                android:id="@+id/button2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/btn_blue"
+                android:text="Q2. 프로그램 무결성 검증"
+                android:layout_marginBottom="8dp" />
 
-        <Button
-            android:id="@+id/button4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Button 4"
-            android:background="@drawable/btn_blue" />
+            <Button
+                android:id="@+id/button3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/btn_blue"
+                android:text="Q3. 소스코드 난독화 적용 여부"
+                android:layout_marginBottom="8dp" />
 
-        <Button
-            android:id="@+id/button5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Button 5"
-            android:background="@drawable/btn_blue" />
+            <Button
+                android:id="@+id/button4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/btn_blue"
+                android:text="Q4. 디버깅 탐지기능 적용 여부"
+                android:layout_marginBottom="8dp" />
 
-        <Button
-            android:id="@+id/button6"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Button 6"
-            android:background="@drawable/btn_blue" />
+            <Button
+                android:id="@+id/button5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/btn_blue"
+                android:text="Q5. 화면 강제 실행에 의한 인증단계 우회"
+                android:layout_marginBottom="8dp" />
 
-        <Button
-            android:id="@+id/button7"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Button 7"
-            android:background="@drawable/btn_blue" />
+            <Button
+                android:id="@+id/button6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/btn_blue"
+                android:text="Q6. 백그라운드 화면 보호"
+                android:layout_marginBottom="8dp" />
 
-        <Button
-            android:id="@+id/button8"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Button 8"
-            android:background="@drawable/btn_blue" />
+            <Button
+                android:id="@+id/button7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/btn_blue"
+                android:text="Q7. 단말기 및 소스코드 내 중요정보 노출 여부"
+                android:layout_marginBottom="8dp" />
 
-    </GridLayout>
-
+            <Button
+                android:id="@+id/button8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/btn_blue"
+                android:text="Q8. 통신구간 암호화 적용 여부"
+                android:layout_marginBottom="8dp" />
+        </LinearLayout>
+    </ScrollView>
 </RelativeLayout>
