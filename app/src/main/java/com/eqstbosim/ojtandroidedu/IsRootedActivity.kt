@@ -8,6 +8,8 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import java.io.File
 
+// Seona Lee
+// EQST Bosim OJT Android Edu 2024.
 class IsRootedActivity : AppCompatActivity() {
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -16,25 +18,15 @@ class IsRootedActivity : AppCompatActivity() {
 
         val statusTextView: TextView = findViewById(R.id.statusIsRooted)
         val checkRootButton: Button = findViewById(R.id.rootCheckButton)
-        val confirmAnswerButton: Button = findViewById(R.id.confirmAnswer1Button)
 
         checkRootButton.setOnClickListener {
             val isRooted = isDeviceRooted()
             if (isRooted) {
-                statusTextView.text = "루팅 탐지"
+                statusTextView.text = "루팅이 탐지됨"
                 Toast.makeText(this, "루팅된 기기입니다.", Toast.LENGTH_SHORT).show()
             } else {
                 statusTextView.text = "루팅이 탐지되지 않음"
                 Toast.makeText(this, "루팅되지 않은 기기입니다.", Toast.LENGTH_SHORT).show()
-            }
-        }
-        confirmAnswerButton.setOnClickListener {
-            val isRooted = isDeviceRooted()
-            val resultCode = if (!isRooted) {
-                statusTextView.text = "정답입니다."
-                Toast.makeText(this, "정답입니다.", Toast.LENGTH_SHORT).show()
-            } else {
-                Toast.makeText(this, "루팅된 기기입니다. 정답이 아닙니다.", Toast.LENGTH_SHORT).show()
             }
         }
     }

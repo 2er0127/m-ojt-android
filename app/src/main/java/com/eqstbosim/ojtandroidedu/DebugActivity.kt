@@ -17,11 +17,11 @@ class DebugActivity : AppCompatActivity() {
 
         checkDebuggingButton.setOnClickListener {
             if (isDebugging()) {
-                statusTextView.text = "디버깅이 감지되었습니다."
-                makeText(this, "디버깅 모드 활성화", LENGTH_SHORT).show()
+                statusTextView.text = "디버깅 활성화"
+                makeText(this, "디버깅이 감지되었습니다.", LENGTH_SHORT).show()
             } else {
-                statusTextView.text = "디버깅이 감지되지 않았습니다."
-                makeText(this, "디버깅 모드 비활성화", LENGTH_SHORT).show()
+                statusTextView.text = "디버깅 비활성화"
+                makeText(this, "디버깅이 감지되지 않았습니다.", LENGTH_SHORT).show()
             }
         }
     }

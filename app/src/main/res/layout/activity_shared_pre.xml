@@ -9,8 +9,16 @@
         android:id="@+id/infoTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="단말기 및 소스코드 내 중요정보 노출 여부 실습"
+        android:text="단말기 및 소스코드 내 중요정보 노출 여부"
         android:textSize="18sp"
+        android:padding="16dp" />
+
+    <TextView
+        android:id="@+id/desTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="단말기 내에서 저장한 정보를 찾아야합니다."
+        android:textSize="16sp"
         android:padding="16dp" />
 
     <EditText

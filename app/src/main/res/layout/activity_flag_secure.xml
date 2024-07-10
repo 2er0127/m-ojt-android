@@ -9,7 +9,7 @@
         android:id="@+id/statusIsFlag"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="백그라운드 화면 보호 실습"
+        android:text="백그라운드 화면 보호"
         android:textSize="18sp"
         android:padding="16dp" />
 

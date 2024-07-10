@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.WindowManager
 import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
 class FlagSecureActivity : AppCompatActivity() {
@@ -20,12 +21,14 @@ class FlagSecureActivity : AppCompatActivity() {
                 WindowManager.LayoutParams.FLAG_SECURE,
                 WindowManager.LayoutParams.FLAG_SECURE
             )
-            statusTextView.text = "화면 보호가 활성화되었습니다."
+            statusTextView.text = "화면 보호 활성화"
+            Toast.makeText(this, "화면 보호가 활성화되었습니다.", Toast.LENGTH_SHORT).show()
         }
 
         disableProtectionButton.setOnClickListener {
             window.clearFlags(WindowManager.LayoutParams.FLAG_SECURE)
-            statusTextView.text = "화면 보호가 비활성화되었습니다."
+            statusTextView.text = "화면 보호 비활성화"
+            Toast.makeText(this, "화면 보호가 비활성화 되었습니다.", Toast.LENGTH_SHORT).show()
         }
     }
 }

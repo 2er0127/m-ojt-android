@@ -22,7 +22,7 @@ class ExportedActivity : AppCompatActivity() {
             val username = usernameEditText.text.toString()
             val password = passwordEditText.text.toString()
 
-            if (username == "admin" && password == "1q2w3e4r5t!") {
+            if (username == "admin" && password == "1q2w3e4r5t!@oz") {
                 val intent = Intent(this, AdminActivity::class.java)
                 startActivity(intent)
             } else {
