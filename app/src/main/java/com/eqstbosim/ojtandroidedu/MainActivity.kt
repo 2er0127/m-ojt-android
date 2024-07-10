@@ -27,6 +27,7 @@ class MainActivity : AppCompatActivity() {
         val button6: Button = findViewById(R.id.button6)
         val button7: Button = findViewById(R.id.button7)
         val button8: Button = findViewById(R.id.button8)
+        val viewUsersButton: Button = findViewById(R.id.viewUsersButton)
 
         button1.setOnClickListener { startButton1Activity() }
         button2.setOnClickListener { startButton2Activity() }
@@ -36,6 +37,7 @@ class MainActivity : AppCompatActivity() {
         button6.setOnClickListener { startButton6Activity() }
         button7.setOnClickListener { startButton7Activity() }
         button8.setOnClickListener { startButton8Activity() }
+        viewUsersButton.setOnClickListener { startUserListActivity() }
     }
 
     private fun startButton1Activity() {
@@ -75,6 +77,11 @@ class MainActivity : AppCompatActivity() {
 
     private fun startButton8Activity() {
         val intent = Intent(this, TcpRequestActivity::class.java)
+        startActivity(intent)
+    }
+
+    private fun startUserListActivity() {
+        val intent = Intent(this, UserListActivity::class.java)
         startActivity(intent)
     }
 }

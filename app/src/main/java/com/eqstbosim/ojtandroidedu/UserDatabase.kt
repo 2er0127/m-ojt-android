@@ -6,8 +6,6 @@ import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 
-// Seona Lee
-// EQST Bosim OJT Android Edu 2024.
 class UserDatabase(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
 
     companion object {
@@ -48,5 +46,26 @@ class UserDatabase(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, 
             return user
         }
         return null
+    }
+
+    fun getAllUsers(): List<User> {
+        val userList: MutableList<User> = ArrayList()
+        val selectQuery = "SELECT * FROM $TABLE_USERS"
+        val db = this.readableDatabase
+        val cursor: Cursor = db.rawQuery(selectQuery, null)
+        if (cursor.moveToFirst()) {
+            do {
+                val user = User(cursor.getString(0), cursor.getString(1))
+                userList.add(user)
+            } while (cursor.moveToNext())
+        }
+        cursor.close()
+        return userList
+    }
+
+    fun deleteUser(username: String) {
+        val db = this.writableDatabase
+        db.delete(TABLE_USERS, "$KEY_USERNAME=?", arrayOf(username))
+        db.close()
     }
 }
