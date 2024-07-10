@@ -5,9 +5,10 @@ import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import java.io.File
 import java.io.FileInputStream
 import java.security.MessageDigest
-import android.util.Base64
+import java.util.zip.ZipFile
 
 class AppHashActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,32 +29,37 @@ class AppHashActivity : AppCompatActivity() {
             }
         }
     }
+
     private fun checkAppIntegrity(): Boolean {
-        val expectedHash = "a2d2c85995198afb0bc4d9f3d7b0ea0c33e1381b6e107ddec374765af7563d2d"
-        val appHash = calculateApkHash()
-        return appHash == expectedHash
+        val expectedDexHash = "808fd0f46acf0a351f6d6cbde74d0dd0b6de5d710f7c95298a1444f72594e41d"
+        val dexHash = calculateDexHash()
+        return dexHash == expectedDexHash
     }
 
-    private fun calculateApkHash(): String? {
+    private fun calculateDexHash(): String? {
         return try {
             val packageManager = packageManager
             val packageName = packageName
             val packageInfo = packageManager.getPackageInfo(packageName, 0)
             val apkPath = packageInfo.applicationInfo.sourceDir
-            val fis = FileInputStream(apkPath)
+            val zipFile = ZipFile(apkPath)
+            val dexEntry = zipFile.getEntry("classes.dex")
+            val inputStream = zipFile.getInputStream(dexEntry)
+
             val digest = MessageDigest.getInstance("SHA-256")
             val buffer = ByteArray(1024)
             var count: Int
-            while (fis.read(buffer).also { count = it } > 0) {
+            while (inputStream.read(buffer).also { count = it } > 0) {
                 digest.update(buffer, 0, count)
             }
-            fis.close()
+            inputStream.close()
+            zipFile.close()
+
             val hashBytes = digest.digest()
-            Base64.encodeToString(hashBytes, Base64.NO_WRAP)
+            hashBytes.joinToString("") { "%02x".format(it) }
         } catch (e: Exception) {
             e.printStackTrace()
             null
         }
     }
 }
-

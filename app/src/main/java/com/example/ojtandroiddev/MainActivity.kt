@@ -4,13 +4,20 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import java.io.File
 
 class MainActivity : AppCompatActivity() {
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        /*if (isDeviceRooted()) {
+            Toast.makeText(this, "루팅된 기기는 앱을 실행할 수 없습니다.", Toast.LENGTH_LONG).show()
+            finish()
+        }*/
 
         val button1: Button = findViewById(R.id.button1)
         val button2: Button = findViewById(R.id.button2)
@@ -71,3 +78,4 @@ class MainActivity : AppCompatActivity() {
         startActivity(intent)
     }
 }
+

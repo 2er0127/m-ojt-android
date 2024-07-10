@@ -19,6 +19,7 @@ class TcpRequestActivity : AppCompatActivity() {
 
     private val serverPort = 12345
     private lateinit var serverThread: Thread
+    private var serverSocket: ServerSocket? = null
 
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -47,28 +48,28 @@ class TcpRequestActivity : AppCompatActivity() {
     private fun startServer(statusTextView: TextView) {
         serverThread = Thread {
             try {
-                val serverSocket = ServerSocket(serverPort)
+                serverSocket = ServerSocket(serverPort)
                 runOnUiThread {
                     statusTextView.text = "Server started on port $serverPort"
                 }
 
                 while (!Thread.currentThread().isInterrupted) {
-                    val clientSocket = serverSocket.accept()
-                    val reader = BufferedReader(InputStreamReader(clientSocket.getInputStream()))
-                    val message = reader.readLine()
+                    val clientSocket = serverSocket?.accept()
+                    val reader = BufferedReader(InputStreamReader(clientSocket?.getInputStream()))
+                    val message = reader?.readLine()
                     runOnUiThread {
                         statusTextView.text = "Received: $message"
                     }
-                    reader.close()
-                    clientSocket.close()
+                    reader?.close()
+                    clientSocket?.close()
                 }
-
-                serverSocket.close()
             } catch (e: IOException) {
                 runOnUiThread {
-                    Toast.makeText(this, "Server error: ${e.message}", Toast.LENGTH_SHORT).show()
-                    statusTextView.text = "Server error: ${e.message}"
+                    //Toast.makeText(this, "Server error: ${e.message}", Toast.LENGTH_SHORT).show()
+                    //statusTextView.text = "Server error: ${e.message}"
                 }
+            } finally {
+                serverSocket?.close()
             }
         }
         serverThread.start()
@@ -96,8 +97,15 @@ class TcpRequestActivity : AppCompatActivity() {
         }
     }
 
+    override fun onBackPressed() {
+        super.onBackPressed()
+        serverThread.interrupt()
+        serverSocket?.close()
+    }
+
     override fun onDestroy() {
         super.onDestroy()
         serverThread.interrupt()
+        serverSocket?.close()
     }
 }
