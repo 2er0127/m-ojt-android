@@ -1,5 +1,6 @@
 package com.eqstbosim.ojtandroidedu
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.os.Debug
 import android.widget.Button
@@ -10,11 +11,12 @@ import androidx.appcompat.app.AppCompatActivity
 // Seona Lee
 // EQST Bosim OJT Android Edu 2024.
 class DebugActivity : AppCompatActivity() {
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_is_debugging)
 
-        val statusTextView: TextView = findViewById(R.id.debugStatusTextView)
+        val statusTextView: TextView = findViewById(R.id.debugIsStatus)
         val checkDebuggingButton: Button = findViewById(R.id.checkDebuggingButton)
 
         checkDebuggingButton.setOnClickListener {

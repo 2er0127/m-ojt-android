@@ -1,5 +1,6 @@
 package com.eqstbosim.ojtandroidedu
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.WindowManager
 import android.widget.Button
@@ -10,11 +11,12 @@ import androidx.appcompat.app.AppCompatActivity
 // Seona Lee
 // EQST Bosim OJT Android Edu 2024.
 class FlagSecureActivity : AppCompatActivity() {
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_flag_secure)
 
-        val statusTextView: TextView = findViewById(R.id.statusIsFlag)
+        val statusTextView: TextView = findViewById(R.id.flagIsStatus)
         val enableProtectionButton: Button = findViewById(R.id.enableProtectionButton)
         val disableProtectionButton: Button = findViewById(R.id.disableProtectionButton)
 

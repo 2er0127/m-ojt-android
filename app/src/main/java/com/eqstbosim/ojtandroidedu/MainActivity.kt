@@ -8,6 +8,8 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
+// Seona Lee
+// EQST Bosim OJT Android Edu 2024.
 class MainActivity : AppCompatActivity() {
     private lateinit var loggedInUserTextView: TextView
     @SuppressLint("MissingInflatedId")
@@ -18,7 +20,7 @@ class MainActivity : AppCompatActivity() {
         loggedInUserTextView = findViewById(R.id.loggedInUserTextView)
 
         val username = intent.getStringExtra("username") ?: ""
-        loggedInUserTextView.text = "현재 ${username} 사용자가 로그인 중입니다."
+        loggedInUserTextView.text = "현재 { ${username} } 사용자가 로그인 중입니다."
 
         val button1: Button = findViewById(R.id.button1)
         val button2: Button = findViewById(R.id.button2)
@@ -63,7 +65,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun startButton4Activity() {
-        val intent = Intent(this, SharedPreActivity::class.java)
+        val intent = Intent(this, DebugActivity::class.java)
         startActivity(intent)
     }
 
@@ -73,12 +75,12 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun startButton6Activity() {
-        val intent = Intent(this, DebugActivity::class.java)
+        val intent = Intent(this, FlagSecureActivity::class.java)
         startActivity(intent)
     }
 
     private fun startButton7Activity() {
-        val intent = Intent(this, FlagSecureActivity::class.java)
+        val intent = Intent(this, SharedPreActivity::class.java)
         startActivity(intent)
     }
 

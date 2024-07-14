@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:padding="16dp">
 
     <TextView
@@ -10,13 +9,39 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="프로그램 무결성 검증"
-        android:textSize="18sp"
-        android:padding="16dp" />
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        android:padding="20dp"
+        android:textStyle="bold"
+        android:gravity="center" />
 
     <Button
         android:id="@+id/checkIntegrityButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="무결성 검증" />
+        android:layout_below="@id/statusIsHash"
+        android:text="무결성 검증"
+        android:background="@drawable/btn_blue"
+        android:textStyle="bold" />
 
-</LinearLayout>
+    <TextView
+        android:id="@+id/hashIsStatus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/checkIntegrityButton"
+        android:gravity="center"
+        android:padding="15dp"
+        android:text="status"
+        android:textColor="@android:color/holo_blue_dark" />
+
+    <TextView
+        android:id="@+id/footerTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="EQST Bosim 2024."
+        android:textSize="14sp"
+        android:padding="16dp"
+        android:gravity="center"
+        android:layout_alignParentBottom="true" />
+
+</RelativeLayout>

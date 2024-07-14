@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
+// Seona Lee
+// EQST Bosim OJT Android Edu 2024.
 class UserListActivity : AppCompatActivity() {
 
     private lateinit var userDatabase: UserDatabase

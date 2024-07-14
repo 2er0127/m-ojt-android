@@ -16,7 +16,7 @@ class IsRootedActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_is_rooted)
 
-        val statusTextView: TextView = findViewById(R.id.statusIsRooted)
+        val statusTextView: TextView = findViewById(R.id.rootIsStatus)
         val checkRootButton: Button = findViewById(R.id.rootCheckButton)
 
         checkRootButton.setOnClickListener {

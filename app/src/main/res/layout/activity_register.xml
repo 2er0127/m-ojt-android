@@ -3,14 +3,28 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:padding="16dp"
+    android:background="#1E1F22">
+
+    <TextView
+        android:id="@+id/registerText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="SIGN UP"
+        android:textSize="24sp"
+        android:padding="16dp"
+        android:textColor="#FFFFFF"
+        android:gravity="center"
+        android:textStyle="bold" />
 
     <EditText
         android:id="@+id/usernameEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Username"
-        android:layout_marginBottom="8dp" />
+        android:layout_marginBottom="20dp"
+        android:textSize="16sp"
+        style="@style/CustomEditTextStyle" />
 
     <EditText
         android:id="@+id/passwordEditText"
@@ -18,12 +32,16 @@
         android:layout_height="wrap_content"
         android:hint="Password"
         android:inputType="textPassword"
-        android:layout_marginBottom="16dp" />
+        android:layout_marginBottom="16dp"
+        android:textSize="16sp"
+        style="@style/CustomEditTextStyle" />
 
     <Button
         android:id="@+id/registerButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Register"
-        android:layout_marginBottom="8dp" />
+        android:layout_marginBottom="8dp"
+        android:backgroundTint="#1E90FF"
+        android:textColor="#FFFFFF" />
 </LinearLayout>

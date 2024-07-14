@@ -28,7 +28,7 @@ class TcpRequestActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_tcp_request)
 
-        val statusTextView: TextView = findViewById(R.id.statusIsRequest)
+        val statusTextView: TextView = findViewById(R.id.requestIsStatus)
         val usernameEditText: EditText = findViewById(R.id.idEditText)
         val passwordEditText: EditText = findViewById(R.id.pwEditText)
         val sendTcpButton: Button = findViewById(R.id.sendTcpButton)

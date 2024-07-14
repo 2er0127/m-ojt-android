@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:padding="16dp">
 
     <TextView
@@ -10,14 +9,19 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="화면 강제 실행에 의한 인증단계 우회"
-        android:textSize="18sp"
-        android:padding="16dp" />
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        android:padding="20dp"
+        android:textStyle="bold"
+        android:gravity="center" />
 
     <TextView
         android:id="@+id/desTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/infoTextView"
         android:text="관리자 페이지에 접근하려면 로그인이 필요합니다."
+        android:textColor="@android:color/black"
         android:textSize="16sp"
         android:padding="16dp" />
 
@@ -25,12 +29,14 @@
         android:id="@+id/adminUsernameEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/desTextView"
         android:hint="아이디" />
 
     <EditText
         android:id="@+id/adminPasswordEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/adminUsernameEditText"
         android:hint="비밀번호"
         android:inputType="textPassword" />
 
@@ -38,6 +44,19 @@
         android:id="@+id/loginButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="로그인" />
+        android:layout_below="@id/adminPasswordEditText"
+        android:text="로그인"
+        android:background="@drawable/btn_blue"
+        android:textStyle="bold" />
 
-</LinearLayout>
+    <TextView
+        android:id="@+id/footerTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="EQST Bosim 2024."
+        android:textSize="14sp"
+        android:padding="16dp"
+        android:gravity="center"
+        android:layout_alignParentBottom="true" />
+
+</RelativeLayout>

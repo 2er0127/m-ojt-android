@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:padding="16dp">
 
     <TextView
@@ -10,14 +9,19 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="단말기 및 소스코드 내 중요정보 노출 여부"
-        android:textSize="18sp"
-        android:padding="16dp" />
+        android:textColor="@android:color/black"
+        android:textSize="19sp"
+        android:padding="20dp"
+        android:textStyle="bold"
+        android:gravity="center" />
 
     <TextView
         android:id="@+id/desTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="단말기 내에서 저장한 정보를 찾아야합니다."
+        android:layout_below="@id/infoTextView"
+        android:text="단말기 내에서 저장한 정보를 찾아야합니다.\n한 번만 저장하세요."
+        android:textColor="@android:color/black"
         android:textSize="16sp"
         android:padding="16dp" />
 
@@ -25,12 +29,14 @@
         android:id="@+id/usernameEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/desTextView"
         android:hint="아이디" />
 
     <EditText
         android:id="@+id/passwordEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/usernameEditText"
         android:hint="비밀번호"
         android:inputType="textPassword" />
 
@@ -38,19 +44,38 @@
         android:id="@+id/saveButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="저장" />
+        android:layout_below="@id/passwordEditText"
+        android:text="저장"
+        android:background="@drawable/btn_blue"
+        android:textStyle="bold" />
 
     <Button
         android:id="@+id/loadButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="불러오기" />
+        android:layout_below="@id/saveButton"
+        android:text="불러오기"
+        android:background="@drawable/btn_blue"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/displayTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/loadButton"
         android:text="저장된 정보가 여기에 표시됩니다."
-        android:textSize="16sp"
-        android:padding="16dp" />
-</LinearLayout>
+        android:gravity="center"
+        android:padding="15dp"
+        android:textColor="@android:color/holo_blue_dark" />
+
+    <TextView
+        android:id="@+id/footerTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="EQST Bosim 2024."
+        android:textSize="14sp"
+        android:padding="16dp"
+        android:gravity="center"
+        android:layout_alignParentBottom="true" />
+
+</RelativeLayout>

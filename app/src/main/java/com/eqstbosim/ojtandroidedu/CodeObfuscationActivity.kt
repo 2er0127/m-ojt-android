@@ -1,5 +1,6 @@
 package com.eqstbosim.ojtandroidedu
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
@@ -9,11 +10,12 @@ import androidx.appcompat.app.AppCompatActivity
 // Seona Lee
 // EQST Bosim OJT Android Edu 2024.
 class CodeObfuscationActivity : AppCompatActivity() {
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_code_obfus)
 
-        val statusTextView: TextView = findViewById(R.id.statusIsObfus)
+        val statusTextView: TextView = findViewById(R.id.obfusIsStatus)
         val checkObfuscationButton: Button = findViewById(R.id.checkObfuscationButton)
 
         checkObfuscationButton.setOnClickListener {
