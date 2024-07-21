@@ -1,113 +1,70 @@
 package com.eqstbosim.ojtandroidedu
 
 import android.annotation.SuppressLint
+import android.os.AsyncTask
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
-import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
-import java.io.BufferedReader
-import java.io.IOException
-import java.io.InputStreamReader
-import java.io.PrintWriter
-import java.net.ServerSocket
+import java.io.BufferedWriter
+import java.io.OutputStreamWriter
 import java.net.Socket
-import java.util.concurrent.Executors
+import android.util.Log
 
-// Seona Lee
-// EQST Bosim OJT Android Edu 2024.
 class TcpRequestActivity : AppCompatActivity() {
 
-    private val serverPort = 12345
-    private lateinit var serverThread: Thread
-    private var serverSocket: ServerSocket? = null
+    private lateinit var idEditText: EditText
+    private lateinit var pwEditText: EditText
+    private lateinit var sendTcpButton: Button
+    private lateinit var requestIsStatus: TextView
 
-    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_tcp_request)
 
-        val statusTextView: TextView = findViewById(R.id.requestIsStatus)
-        val usernameEditText: EditText = findViewById(R.id.idEditText)
-        val passwordEditText: EditText = findViewById(R.id.pwEditText)
-        val sendTcpButton: Button = findViewById(R.id.sendTcpButton)
+        idEditText = findViewById(R.id.idEditText)
+        pwEditText = findViewById(R.id.pwEditText)
+        sendTcpButton = findViewById(R.id.sendTcpButton)
+        requestIsStatus = findViewById(R.id.requestIsStatus)
 
-        startServer(statusTextView)
+        // 서버 시작
+        val server = LocalServer()
+        server.startServer()
 
         sendTcpButton.setOnClickListener {
-            val username = usernameEditText.text.toString()
-            val password = passwordEditText.text.toString()
-
-            if (username.isNotEmpty() && password.isNotEmpty()) {
-                sendTcpRequest(username, password, statusTextView)
-            } else {
-                Toast.makeText(this, "사용자 이름과 비밀번호를 입력하세요.", Toast.LENGTH_SHORT).show()
-            }
+            val id = idEditText.text.toString()
+            val pw = pwEditText.text.toString()
+            val message = "ID: $id, PW: $pw"
+            SendMessageTask().execute(message)
         }
     }
 
-    private fun startServer(statusTextView: TextView) {
-        serverThread = Thread {
-            try {
-                serverSocket = ServerSocket(serverPort)
-                runOnUiThread {
-                    statusTextView.text = "Server started on port $serverPort"
-                }
-
-                while (!Thread.currentThread().isInterrupted) {
-                    val clientSocket = serverSocket?.accept()
-                    val reader = BufferedReader(InputStreamReader(clientSocket?.getInputStream()))
-                    val message = reader?.readLine()
-                    runOnUiThread {
-                        statusTextView.text = "Received: $message"
-                    }
-                    reader?.close()
-                    clientSocket?.close()
-                }
-            } catch (e: IOException) {
-                runOnUiThread {
-                    //Toast.makeText(this, "Server error: ${e.message}", Toast.LENGTH_SHORT).show()
-                    //statusTextView.text = "Server error: ${e.message}"
-                }
-            } finally {
-                serverSocket?.close()
-            }
-        }
-        serverThread.start()
-    }
-
-    private fun sendTcpRequest(username: String, password: String, statusTextView: TextView) {
-        val executor = Executors.newSingleThreadExecutor()
-        executor.execute {
-            try {
-                val message = "username=$username&password=$password"
-                val clientSocket = Socket("127.0.0.1", serverPort)
-                val writer = PrintWriter(clientSocket.getOutputStream(), true)
-                writer.println(message)
-                writer.close()
-                clientSocket.close()
-                runOnUiThread {
-                    statusTextView.text = "Request sent: $message"
-                }
+    @SuppressLint("StaticFieldLeak")
+    private inner class SendMessageTask : AsyncTask<String, Void, String>() {
+        @Deprecated("Deprecated in Java")
+        override fun doInBackground(vararg params: String?): String? {
+            val message = params[0]
+            return try {
+                val socket = Socket("127.0.0.1", 12345) // 로컬 IP 주소
+                val output = BufferedWriter(OutputStreamWriter(socket.getOutputStream()))
+                Log.d("SendMessageTask", "Sending message: $message")
+                output.write(message)
+                output.newLine()
+                output.flush()
+                output.close()
+                socket.close()
+                "Message sent successfully"
             } catch (e: Exception) {
-                runOnUiThread {
-                    Toast.makeText(this, "Request failed: ${e.message}", Toast.LENGTH_SHORT).show()
-                    statusTextView.text = "Request failed: ${e.message}"
-                }
+                Log.e("SendMessageTask", "Failed to send message", e)
+                "Failed to send message"
             }
         }
-    }
 
-    override fun onBackPressed() {
-        super.onBackPressed()
-        serverThread.interrupt()
-        serverSocket?.close()
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        serverThread.interrupt()
-        serverSocket?.close()
+        @Deprecated("Deprecated in Java")
+        override fun onPostExecute(result: String?) {
+            super.onPostExecute(result)
+            requestIsStatus.text = result
+        }
     }
 }
