@@ -113,6 +113,16 @@
                 android:text="Q8. 통신구간 암호화 적용 여부"
                 android:layout_marginBottom="8dp"
                 android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/button9"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:background="@drawable/btn_blue"
+                android:text="Q9. Deep Link 취약점"
+                android:layout_marginBottom="8dp"
+                android:textStyle="bold" />
+
         </LinearLayout>
     </ScrollView>
 

@@ -39,6 +39,7 @@ class MainActivity : AppCompatActivity() {
         val button6: Button = findViewById(R.id.button6)
         val button7: Button = findViewById(R.id.button7)
         val button8: Button = findViewById(R.id.button8)
+        val button9: Button = findViewById(R.id.button9)
 
         button1.setOnClickListener { startButton1Activity() }
         button2.setOnClickListener { startButton2Activity() }
@@ -48,6 +49,7 @@ class MainActivity : AppCompatActivity() {
         button6.setOnClickListener { startButton6Activity() }
         button7.setOnClickListener { startButton7Activity() }
         button8.setOnClickListener { startButton8Activity() }
+        button9.setOnClickListener { startButton9Activity() }
 
         if (username == "admin") {
             val userListButton = Button(this).apply {
@@ -95,6 +97,11 @@ class MainActivity : AppCompatActivity() {
 
     private fun startButton8Activity() {
         val intent = Intent(this, TcpRequestActivity::class.java)
+        startActivity(intent)
+    }
+
+    private fun startButton9Activity() {
+        val intent = Intent(this, DeepLinkActivity::class.java)
         startActivity(intent)
     }
 

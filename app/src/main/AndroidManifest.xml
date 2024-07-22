@@ -33,6 +33,15 @@
         <activity android:name=".FlagSecureActivity"/>
         <activity android:name=".TcpRequestActivity"/>
         <activity android:name=".UserListActivity" android:exported="true"/>
+        <activity android:name=".DeepLinkActivity"/>
+        <activity android:name=".DeepLinkViewActivity" android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="myapp" android:host="login" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
