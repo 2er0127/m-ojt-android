@@ -20,7 +20,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/infoTextView"
-        android:text="단말기 내에서 저장한 정보를 찾아야합니다.\n한 번만 저장하세요."
+        android:text="단말기 내에 저장된 정보가 존재합니다."
         android:textColor="@android:color/black"
         android:textSize="16sp"
         android:padding="16dp" />

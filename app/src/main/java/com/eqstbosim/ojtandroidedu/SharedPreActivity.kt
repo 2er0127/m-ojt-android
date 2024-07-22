@@ -1,5 +1,7 @@
 package com.eqstbosim.ojtandroidedu
 
+import android.content.Context
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
@@ -10,7 +12,7 @@ import androidx.appcompat.app.AppCompatActivity
 // EQST Bosim OJT Android Edu 2024.
 class SharedPreActivity : AppCompatActivity() {
 
-    private lateinit var db: UserDatabase
+    private lateinit var sharedPreferences: SharedPreferences
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,27 +24,36 @@ class SharedPreActivity : AppCompatActivity() {
         val loadButton: Button = findViewById(R.id.loadButton)
         val displayTextView: TextView = findViewById(R.id.displayTextView)
 
-        db = UserDatabase(this)
+        sharedPreferences = getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
 
         saveButton.setOnClickListener {
             val username = usernameEditText.text.toString()
             val password = passwordEditText.text.toString()
 
-            val user = User(username, password)
-            db.addUser(user)
+            with(sharedPreferences.edit()) {
+                putString(KEY_USERNAME, username)
+                putString(KEY_PASSWORD, password)
+                apply()
+            }
 
             displayTextView.text = "정보가 저장되었습니다."
         }
 
         loadButton.setOnClickListener {
-            val username = usernameEditText.text.toString()
-            val user = db.getUser(username)
-
-            if (user != null) {
-                displayTextView.text = "아이디: ${user.username}\n비밀번호: ${user.password}"
+            // Load from SharedPreferences
+            val savedUsername = sharedPreferences.getString(KEY_USERNAME, null)
+            val savedPassword = sharedPreferences.getString(KEY_PASSWORD, null)
+            if (savedUsername != null && savedPassword != null) {
+                displayTextView.text = "아이디: $savedUsername\n비밀번호: $savedPassword"
             } else {
-                displayTextView.text = "저장된 아이디가 없습니다."
+                displayTextView.text = "저장된 정보가 없습니다."
             }
         }
+    }
+
+    companion object {
+        private const val PREFS_NAME = "UserPrefs"
+        private const val KEY_USERNAME = "username"
+        private const val KEY_PASSWORD = "password"
     }
 }
