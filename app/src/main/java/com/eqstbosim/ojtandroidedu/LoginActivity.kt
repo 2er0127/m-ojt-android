@@ -24,6 +24,9 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
+        val dbController = DatabaseController(this)
+        dbController.createDatabase()
+
         val usernameEditText: EditText = findViewById(R.id.usernameEditText)
         val passwordEditText: EditText = findViewById(R.id.passwordEditText)
         val loginButton: Button = findViewById(R.id.loginButton)
