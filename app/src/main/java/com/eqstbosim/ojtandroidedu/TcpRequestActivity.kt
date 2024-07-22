@@ -12,6 +12,8 @@ import java.io.OutputStreamWriter
 import java.net.Socket
 import android.util.Log
 
+// Seona Lee
+// EQST Bosim OJT Android Edu 2024.
 class TcpRequestActivity : AppCompatActivity() {
 
     private lateinit var idEditText: EditText

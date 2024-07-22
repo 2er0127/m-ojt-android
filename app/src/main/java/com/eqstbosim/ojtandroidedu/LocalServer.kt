@@ -7,6 +7,8 @@ import java.io.BufferedReader
 import kotlin.concurrent.thread
 import android.util.Log
 
+// Seona Lee
+// EQST Bosim OJT Android Edu 2024.
 fun main() {
     val server = LocalServer()
     server.startServer()
