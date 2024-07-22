@@ -1,3 +1,14 @@
+/*
+ * Copyright (c) 2024 SK shieldus EQST Bosim
+ * Author: Seona Lee
+ * EQST Bosim OJT Android Edu 2024.
+ * All rights reserved.
+ *
+ * This software is the confidential and proprietary information of EQST Bosim.
+ * You shall not disclose such confidential information and shall use it only
+ * in accordance with the terms of the license agreement you entered into with EQST Bosim.
+ */
+
 package com.eqstbosim.ojtandroidedu
 
 import android.annotation.SuppressLint
@@ -8,8 +19,6 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
-// Seona Lee
-// EQST Bosim OJT Android Edu 2024.
 class MainActivity : AppCompatActivity() {
     private lateinit var loggedInUserTextView: TextView
     @SuppressLint("MissingInflatedId")

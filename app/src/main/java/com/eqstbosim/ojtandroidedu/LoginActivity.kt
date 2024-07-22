@@ -1,3 +1,14 @@
+/*
+ * Copyright (c) 2024 SK shieldus EQST Bosim
+ * Author: Seona Lee
+ * EQST Bosim OJT Android Edu 2024.
+ * All rights reserved.
+ *
+ * This software is the confidential and proprietary information of EQST Bosim.
+ * You shall not disclose such confidential information and shall use it only
+ * in accordance with the terms of the license agreement you entered into with EQST Bosim.
+ */
+
 package com.eqstbosim.ojtandroidedu
 
 import android.content.Intent
@@ -8,8 +19,6 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
-// Seona Lee
-// EQST Bosim OJT Android Edu 2024.
 class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

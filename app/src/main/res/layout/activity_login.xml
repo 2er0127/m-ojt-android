@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp"
     android:background="#1E1F22" >
 
-    <ImageView
+    <!--<ImageView
         android:id="@+id/imageView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -15,7 +15,7 @@
         android:scaleType="centerCrop"
         android:layout_marginTop="16dp"
         android:layout_below="@id/loggedInUserTextView"
-        android:layout_marginBottom="16dp"/>
+        android:layout_marginBottom="16dp"/>-->
 
     <TextView
         android:id="@+id/registerText"
@@ -33,6 +33,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Username"
+        android:layout_below="@id/registerText"
         android:layout_marginBottom="20dp"
         android:textSize="16sp"
         style="@style/CustomEditTextStyle" />
@@ -43,6 +44,7 @@
         android:layout_height="wrap_content"
         android:hint="Password"
         android:inputType="textPassword"
+        android:layout_below="@id/usernameEditText"
         android:layout_marginBottom="16dp"
         android:textSize="16sp"
         style="@style/CustomEditTextStyle" />
@@ -52,6 +54,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Login"
+        android:layout_below="@id/passwordEditText"
         android:layout_marginBottom="8dp"
         android:backgroundTint="#1E90FF"
         android:textColor="#FFFFFF" />
@@ -61,6 +64,19 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="SIGN UP"
+        android:layout_below="@id/loginButton"
         android:textColor="@android:color/holo_blue_dark"
         android:gravity="center" />
-</LinearLayout>
+
+    <TextView
+        android:id="@+id/footerTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Copyright (c) 2024 SK shieldus EQST Bosim"
+        android:textSize="14sp"
+        android:padding="16dp"
+        android:gravity="center"
+        android:textColor="@android:color/white"
+        android:layout_alignParentBottom="true" />
+
+</RelativeLayout>
