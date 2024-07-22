@@ -30,7 +30,6 @@ class TcpRequestActivity : AppCompatActivity() {
         sendTcpButton = findViewById(R.id.sendTcpButton)
         requestIsStatus = findViewById(R.id.requestIsStatus)
 
-        // 서버 시작
         val server = LocalServer()
         server.startServer()
 
