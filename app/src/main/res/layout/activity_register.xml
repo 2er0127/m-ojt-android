@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp"
-    android:background="#1E1F22">
+    android:background="#1E1F22" >
 
     <TextView
         android:id="@+id/registerText"
@@ -24,6 +24,7 @@
         android:hint="Username"
         android:layout_marginBottom="20dp"
         android:textSize="16sp"
+        android:layout_below="@id/registerText"
         style="@style/CustomEditTextStyle" />
 
     <EditText
@@ -34,6 +35,7 @@
         android:inputType="textPassword"
         android:layout_marginBottom="16dp"
         android:textSize="16sp"
+        android:layout_below="@id/usernameEditText"
         style="@style/CustomEditTextStyle" />
 
     <Button
@@ -43,5 +45,18 @@
         android:text="Register"
         android:layout_marginBottom="8dp"
         android:backgroundTint="#1E90FF"
+        android:layout_below="@id/passwordEditText"
         android:textColor="#FFFFFF" />
-</LinearLayout>
+
+    <TextView
+        android:id="@+id/footerTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Copyright (c) 2024 SK shieldus EQST Bosim"
+        android:textSize="14sp"
+        android:padding="16dp"
+        android:gravity="center"
+        android:textColor="@android:color/white"
+        android:layout_alignParentBottom="true" />
+
+</RelativeLayout>
