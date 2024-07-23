@@ -11,6 +11,7 @@
 
 package com.eqstbosim.ojtandroidedu
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
@@ -41,6 +42,8 @@ class LoginActivity : AppCompatActivity() {
             val user = userDatabase.getUser(username)
 
             if (user != null && user.password == password) {
+                saveLoginInfo(user)
+
                 val intent = Intent(this, MainActivity::class.java).apply {
                     putExtra("username", username)
                 }
@@ -55,5 +58,13 @@ class LoginActivity : AppCompatActivity() {
             val intent = Intent(this, RegisterActivity::class.java)
             startActivity(intent)
         }
+    }
+
+    private fun saveLoginInfo(user: User) {
+        val sharedPreferences = getSharedPreferences("user_prefs", Context.MODE_PRIVATE)
+        val editor = sharedPreferences.edit()
+        editor.putString("username", user.username)
+        editor.putString("password", user.password)
+        editor.apply()
     }
 }

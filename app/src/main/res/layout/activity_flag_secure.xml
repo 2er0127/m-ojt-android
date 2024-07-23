@@ -38,10 +38,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/disableProtectionButton"
-        android:text="중요정보 ex.\n현재 로그인된 아이디: EQST\n비밀번호: EQST1234"
+        android:text="현재 로그인된 아이디: \n비밀번호: "
         android:textColor="@android:color/black"
         android:textSize="16sp"
         android:padding="16dp" />
+
 
     <TextView
         android:id="@+id/flagIsStatus"
