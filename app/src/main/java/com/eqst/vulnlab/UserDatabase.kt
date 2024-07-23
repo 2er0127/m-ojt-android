@@ -1,4 +1,4 @@
-package com.eqstbosim.ojtandroidedu
+package com.eqst.vulnlab
 
 import android.content.ContentValues
 import android.content.Context
@@ -17,11 +17,19 @@ class UserDatabase(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, 
     }
 
     override fun onCreate(db: SQLiteDatabase) {
-
+        // Ensure the table is created if needed
+        val createTableQuery = """
+            CREATE TABLE IF NOT EXISTS $TABLE_USERS (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                $KEY_USERNAME TEXT NOT NULL,
+                $KEY_PASSWORD TEXT NOT NULL
+            );
+        """.trimIndent()
+        db.execSQL(createTableQuery)
     }
 
     override fun onUpgrade(db: SQLiteDatabase, oldVersion: Int, newVersion: Int) {
-
+        // Database upgrade logic if needed
     }
 
     fun addUser(user: User) {

@@ -1,4 +1,4 @@
-package com.eqstbosim.ojtandroidedu
+package com.eqst.vulnlab
 
 import android.view.LayoutInflater
 import android.view.View
@@ -7,8 +7,6 @@ import android.widget.Button
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-// Seona Lee
-// EQST Bosim OJT Android Edu 2024.
 class UserAdapter(private val userList: MutableList<User>, private val userDatabase: UserDatabase) : RecyclerView.Adapter<UserAdapter.UserViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UserViewHolder {

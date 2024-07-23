@@ -1,4 +1,4 @@
-package com.eqstbosim.ojtandroidedu
+package com.eqst.vulnlab
 
 import org.junit.Test
 

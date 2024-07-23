@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "com.eqstbosim.ojtandroidedu"
+    namespace = "com.eqst.vulnlab"
     compileSdk = 33
 
     defaultConfig {
-        applicationId = "com.eqstbosim.ojtandroidedu"
+        applicationId = "com.eqst.vulnlab"
         minSdk = 24
         targetSdk = 33
         versionCode = 1
@@ -42,7 +42,7 @@ android {
             val appName = "Vuln Lab"
             val versionName = versionName
             val variantName = name
-            val newApkName = "${appName}-${variantName}-${versionName}.apk"
+            val newApkName = "${appName}-${variantName}-v${versionName}.apk"
 
             (this as com.android.build.gradle.internal.api.BaseVariantOutputImpl).outputFileName = newApkName
         }
@@ -50,7 +50,6 @@ android {
 }
 
 dependencies {
-
     implementation("androidx.core:core-ktx:1.9.0")
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("com.google.android.material:material:1.9.0")

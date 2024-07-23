@@ -9,7 +9,7 @@
  * in accordance with the terms of the license agreement you entered into with EQST Bosim.
  */
 
-package com.eqstbosim.ojtandroidedu
+package com.eqst.vulnlab
 
 import android.content.Context
 import android.content.Intent

@@ -1,4 +1,4 @@
-package com.eqstbosim.ojtandroidedu
+package com.eqst.vulnlab
 
 import android.annotation.SuppressLint
 import android.net.Uri

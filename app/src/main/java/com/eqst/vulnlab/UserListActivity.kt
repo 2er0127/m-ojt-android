@@ -1,12 +1,10 @@
-package com.eqstbosim.ojtandroidedu
+package com.eqst.vulnlab
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
-// Seona Lee
-// EQST Bosim OJT Android Edu 2024.
 class UserListActivity : AppCompatActivity() {
 
     private lateinit var userDatabase: UserDatabase

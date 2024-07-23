@@ -1,4 +1,4 @@
-package com.eqstbosim.ojtandroidedu
+package com.eqst.vulnlab
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
