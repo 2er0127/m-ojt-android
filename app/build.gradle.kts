@@ -36,6 +36,17 @@ android {
     buildFeatures {
         viewBinding = true
     }
+
+    applicationVariants.all {
+        outputs.all {
+            val appName = "Vuln Lab"
+            val versionName = versionName
+            val variantName = name
+            val newApkName = "${appName}-${variantName}-${versionName}.apk"
+
+            (this as com.android.build.gradle.internal.api.BaseVariantOutputImpl).outputFileName = newApkName
+        }
+    }
 }
 
 dependencies {
