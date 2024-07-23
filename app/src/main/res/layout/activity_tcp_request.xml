@@ -15,11 +15,21 @@
         android:textStyle="bold"
         android:gravity="center" />
 
+    <TextView
+        android:id="@+id/desTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/statusIsRequest"
+        android:text="서버를 시작한 후 로그인을 진행하세요."
+        android:textColor="@android:color/black"
+        android:textSize="16sp"
+        android:padding="16dp" />
+
     <EditText
         android:id="@+id/idEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/statusIsRequest"
+        android:layout_below="@id/desTextView"
         android:hint="아이디" />
 
     <EditText
@@ -39,11 +49,30 @@
         android:background="@drawable/btn_blue"
         android:textStyle="bold" />
 
+    <Button
+        android:id="@+id/startServerButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Start Server"
+        android:layout_below="@id/sendTcpButton"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/btn_blue"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/stopServerButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Stop Server"
+        android:layout_below="@id/startServerButton"
+        android:background="@drawable/btn_blue"
+        android:textStyle="bold" />
+
     <TextView
         android:id="@+id/requestIsStatus"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/sendTcpButton"
+        android:layout_below="@id/stopServerButton"
         android:gravity="center"
         android:padding="15dp"
         android:text="status"
