@@ -6,8 +6,8 @@ import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import java.security.MessageDigest
 import java.util.zip.ZipFile
+import java.io.File
 
 // Seona Lee
 // EQST Bosim OJT Android Edu 2024.
@@ -19,6 +19,8 @@ class AppHashActivity : AppCompatActivity() {
 
         val statusTextView: TextView = findViewById(R.id.hashIsStatus)
         val checkIntegrityButton: Button = findViewById(R.id.checkIntegrityButton)
+
+        saveDexCrc()
 
         checkIntegrityButton.setOnClickListener {
             val isAppIntegrityValid = checkAppIntegrity()
@@ -33,12 +35,12 @@ class AppHashActivity : AppCompatActivity() {
     }
 
     private fun checkAppIntegrity(): Boolean {
-        val expectedDexHash = "2de0ede2d632a432f9cd5c589c12aab411c122d991c910a26711fd3a4e447fb3"
-        val dexHash = calculateDexHash()
-        return dexHash == expectedDexHash
+        val dexCrcFromFile = readDexCrcFromFile()
+        val dexCrc = calculateDexCrc()
+        return dexCrc != null && dexCrc == dexCrcFromFile
     }
 
-    private fun calculateDexHash(): String? {
+    private fun calculateDexCrc(): Long? {
         return try {
             val packageManager = packageManager
             val packageName = packageName
@@ -46,22 +48,42 @@ class AppHashActivity : AppCompatActivity() {
             val apkPath = packageInfo.applicationInfo.sourceDir
             val zipFile = ZipFile(apkPath)
             val dexEntry = zipFile.getEntry("classes.dex")
-            val inputStream = zipFile.getInputStream(dexEntry)
-
-            val digest = MessageDigest.getInstance("SHA-256")
-            val buffer = ByteArray(1024)
-            var count: Int
-            while (inputStream.read(buffer).also { count = it } > 0) {
-                digest.update(buffer, 0, count)
-            }
-            inputStream.close()
+            val dexCrc = dexEntry.crc
             zipFile.close()
-
-            val hashBytes = digest.digest()
-            hashBytes.joinToString("") { "%02x".format(it) }
+            dexCrc
         } catch (e: Exception) {
             e.printStackTrace()
             null
+        }
+    }
+
+    private fun readDexCrcFromFile(): Long? {
+        return try {
+            val file = File(filesDir, "dex_crc.txt")
+            if (!file.exists()) {
+                null
+            } else {
+                file.readText().toLong()
+            }
+        } catch (e: Exception) {
+            e.printStackTrace()
+            null
+        }
+    }
+
+    private fun writeDexCrcToFile(dexCrc: Long) {
+        try {
+            val file = File(filesDir, "dex_crc.txt")
+            file.writeText(dexCrc.toString())
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
+    }
+
+    private fun saveDexCrc() {
+        val dexCrc = calculateDexCrc()
+        if (dexCrc != null) {
+            writeDexCrcToFile(dexCrc)
         }
     }
 }
