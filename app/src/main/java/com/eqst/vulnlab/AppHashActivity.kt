@@ -33,7 +33,7 @@ class AppHashActivity : AppCompatActivity() {
     }
 
     private fun checkAppIntegrity(): Boolean {
-        val expectedDexHash = "808fd0f46acf0a351f6d6cbde74d0dd0b6de5d710f7c95298a1444f72594e41d"
+        val expectedDexHash = "2de0ede2d632a432f9cd5c589c12aab411c122d991c910a26711fd3a4e447fb3"
         val dexHash = calculateDexHash()
         return dexHash == expectedDexHash
     }
