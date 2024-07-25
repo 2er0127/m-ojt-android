@@ -11,16 +11,42 @@
         android:text="백그라운드 화면 보호"
         android:textColor="@android:color/black"
         android:textSize="20sp"
-        android:padding="20dp"
+        android:padding="10dp"
+        android:paddingTop="20dp"
+        android:layout_marginTop="8dp"
         android:textStyle="bold"
         android:gravity="center" />
+
+    <RelativeLayout
+        android:id="@+id/noteLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/statusIsFlag"
+        android:background="@drawable/note_background"
+        android:padding="16dp"
+        android:layout_margin="16dp"
+        android:layout_marginTop="4dp"
+        android:elevation="4dp">
+
+        <TextView
+            android:id="@+id/noteContent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="이 코드는 FLAG_SECURE 플래그를 사용하여 화면 보호 기능을 활성화하거나 비활성화합니다.\n해당 기능은 스크린샷/화면 녹화를 방지하는 데 사용됩니다."
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:textColor="#555555"
+            android:gravity="center"/>
+
+    </RelativeLayout>
 
     <Button
         android:id="@+id/enableProtectionButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/statusIsFlag"
+        android:layout_below="@id/noteLayout"
         android:text="화면 보호 활성화"
+        android:layout_marginTop="8dp"
         android:background="@drawable/btn_blue"
         android:textStyle="bold" />
 

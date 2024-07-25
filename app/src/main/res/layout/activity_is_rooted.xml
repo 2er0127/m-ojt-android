@@ -11,17 +11,43 @@
         android:text="OS 변조 탐지 기능 적용 여부"
         android:textColor="@android:color/black"
         android:textSize="20sp"
-        android:padding="20dp"
+        android:padding="10dp"
+        android:paddingTop="20dp"
+        android:layout_marginTop="8dp"
         android:textStyle="bold"
         android:gravity="center" />
+
+    <RelativeLayout
+        android:id="@+id/noteLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/statusIsRooted"
+        android:background="@drawable/note_background"
+        android:padding="16dp"
+        android:layout_margin="16dp"
+        android:layout_marginTop="4dp"
+        android:elevation="4dp">
+
+        <TextView
+            android:id="@+id/noteContent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="이 코드는 기기의 루팅 여부를 확인하는 방법을 제공합니다.\n다양한 경로, 패키지, 빌드 태그를 검사하여 기기가 루팅되었는지 판단합니다."
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:textColor="#555555"
+            android:gravity="center"/>
+
+    </RelativeLayout>
 
     <Button
         android:id="@+id/rootCheckButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/statusIsRooted"
+        android:layout_below="@id/noteLayout"
         android:background="@drawable/btn_blue"
         android:text="루팅 상태 확인"
+        android:layout_marginTop="8dp"
         android:textStyle="bold" />
 
     <TextView

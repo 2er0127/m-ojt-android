@@ -11,16 +11,42 @@
         android:text="화면 강제 실행에 의한 인증단계 우회"
         android:textColor="@android:color/black"
         android:textSize="20sp"
-        android:padding="20dp"
+        android:padding="10dp"
+        android:paddingTop="20dp"
+        android:layout_marginTop="8dp"
         android:textStyle="bold"
         android:gravity="center" />
+
+    <RelativeLayout
+        android:id="@+id/noteLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/infoTextView"
+        android:background="@drawable/note_background"
+        android:padding="16dp"
+        android:layout_margin="16dp"
+        android:layout_marginTop="4dp"
+        android:elevation="4dp">
+
+        <TextView
+            android:id="@+id/noteContent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="이 코드는 관리자 계정으로 로그인 시 관리자 페이지로 이동하는 기능입니다.\n인증 절차를 우회할 수 있는 가능성을 점검하세요."
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:textColor="#555555"
+            android:gravity="center"/>
+
+    </RelativeLayout>
 
     <TextView
         android:id="@+id/desTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/infoTextView"
+        android:layout_below="@id/noteLayout"
         android:text="관리자 페이지에 접근하려면 로그인이 필요합니다."
+        android:layout_marginTop="8dp"
         android:textColor="@android:color/black"
         android:textSize="16sp"
         android:padding="16dp" />
@@ -28,14 +54,14 @@
     <EditText
         android:id="@+id/adminUsernameEditText"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="48dp"
         android:layout_below="@id/desTextView"
         android:hint="아이디" />
 
     <EditText
         android:id="@+id/adminPasswordEditText"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="48dp"
         android:layout_below="@id/adminUsernameEditText"
         android:hint="비밀번호"
         android:inputType="textPassword" />

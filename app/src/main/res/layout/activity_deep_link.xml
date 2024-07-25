@@ -11,17 +11,43 @@
         android:text="Deep Link 취약점"
         android:textColor="@android:color/black"
         android:textSize="20sp"
-        android:padding="20dp"
+        android:padding="10dp"
+        android:paddingTop="20dp"
+        android:layout_marginTop="8dp"
         android:textStyle="bold"
         android:gravity="center" />
+
+    <RelativeLayout
+        android:id="@+id/noteLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/deeplinkText"
+        android:background="@drawable/note_background"
+        android:padding="16dp"
+        android:layout_margin="16dp"
+        android:layout_marginTop="4dp"
+        android:elevation="4dp">
+
+        <TextView
+            android:id="@+id/noteContent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="이 코드는 특정 URL을 통해 앱의 Deep Link를 이용해 웹 페이지로 이동하는 기능을 보여줍니다.\n버튼 클릭 시, 현재 사용자 패스워드를 포함한 URL로 이동하며, WebView를 통해 해당 URL을 로드합니다."
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:textColor="#555555"
+            android:gravity="center"/>
+
+    </RelativeLayout>
 
     <Button
         android:id="@+id/deepLinkButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/deeplinkText"
+        android:layout_below="@id/noteLayout"
         android:background="@drawable/btn_blue"
         android:text="웹 페이지 이동하기"
+        android:layout_marginTop="8dp"
         android:textStyle="bold"
         android:layout_centerInParent="true"/>
 

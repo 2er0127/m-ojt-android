@@ -11,16 +11,42 @@
         android:text="통신구간 암호화 적용 여부"
         android:textColor="@android:color/black"
         android:textSize="20sp"
-        android:padding="20dp"
+        android:padding="10dp"
+        android:paddingTop="20dp"
+        android:layout_marginTop="8dp"
         android:textStyle="bold"
         android:gravity="center" />
+
+    <RelativeLayout
+        android:id="@+id/noteLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/statusIsRequest"
+        android:background="@drawable/note_background"
+        android:padding="16dp"
+        android:layout_margin="16dp"
+        android:layout_marginTop="4dp"
+        android:elevation="4dp">
+
+        <TextView
+            android:id="@+id/noteContent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="이 코드는 TCP 서버와 클라이언트를 통해 ID와 비밀번호를 송수신하는 예제를 보여줍니다.\n서버를 시작하고 로그인 정보를 전송하여 통신 패킷을 확인하세요."
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:textColor="#555555"
+            android:gravity="center"/>
+
+    </RelativeLayout>
 
     <TextView
         android:id="@+id/desTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/statusIsRequest"
+        android:layout_below="@id/noteLayout"
         android:text="서버를 시작한 후 로그인을 진행하세요."
+        android:layout_marginTop="8dp"
         android:textColor="@android:color/black"
         android:textSize="16sp"
         android:padding="16dp" />
@@ -28,14 +54,14 @@
     <EditText
         android:id="@+id/idEditText"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="48dp"
         android:layout_below="@id/desTextView"
         android:hint="아이디" />
 
     <EditText
         android:id="@+id/pwEditText"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="48dp"
         android:layout_below="@id/idEditText"
         android:hint="비밀번호"
         android:inputType="textPassword" />

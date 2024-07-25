@@ -19,7 +19,7 @@ class CodeObfuscationActivity : AppCompatActivity() {
         val checkObfuscationButton: Button = findViewById(R.id.checkObfuscationButton)
 
         checkObfuscationButton.setOnClickListener {
-            val isObfuscated = isClassObfuscated(MainActivity::class.java)
+            val isObfuscated = isClassObfuscated(CodeObfuscationActivity::class.java)
             if (isObfuscated) {
                 statusTextView.text = "난독화되어 있음"
                 Toast.makeText(this, "코드가 난독화되어 있습니다.", Toast.LENGTH_SHORT).show()

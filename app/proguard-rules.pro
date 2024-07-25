@@ -27,6 +27,10 @@
 -optimizations !code/simplification/arithmetic,!field/*,!class/merging/*
 
 -keepattributes *Annotation*
+-keepattributes Exceptions
+-keepattributes InnerClasses
+-keepattributes Signature
+-keepattributes SourceFile,LineNumberTable
 -keep class android.support.v7.widget.** { *; }
 -keep interface android.support.v7.widget.** { *; }
 -keep class android.arch.** { *; }
@@ -47,3 +51,20 @@
 -dontwarn org.intellij.lang.annotations.*
 
 -keep class com.google.gson.** { *; }
+-keep class com.google.gson.stream.** { *; }
+-keep class okio.** { *; }
+-keep public class * implements java.lang.reflect.Type
+-keep class **$GsonConverter { *; }
+-keepattributes Signature
+-keepattributes RuntimeVisibleAnnotations,AnnotationDefault
+
+-keep class okhttp3.** { *; }
+-keep interface okhttp3.** { *; }
+
+-dontwarn org.reactivestreams.**
+-dontwarn java.util.concurrent.Flow*
+-dontwarn java.util.concurrent.flow.**
+-dontwarn java.util.concurrent.**
+-dontwarn com.facebook.stetho.**
+
+-keepclassmembers class com.eqst.vulnlab.CodeObfuscationActivity { *; }
