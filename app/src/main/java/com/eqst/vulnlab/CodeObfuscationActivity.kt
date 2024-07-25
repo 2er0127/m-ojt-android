@@ -6,6 +6,7 @@ import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import java.lang.reflect.Modifier
 
 // Seona Lee
 // EQST Bosim OJT Android Edu 2024.
@@ -31,7 +32,11 @@ class CodeObfuscationActivity : AppCompatActivity() {
     }
 
     private fun isClassObfuscated(cls: Class<*>): Boolean {
-        val className = cls.simpleName
-        return className.length <= 2
+        return try {
+            cls.getDeclaredMethod("isClassObfuscated", Class::class.java)
+            false
+        } catch (e: NoSuchMethodException) {
+            true
+        }
     }
 }
