@@ -1,7 +1,11 @@
 # Info
 EQST OJT 안드로이드 앱 취약점 진단 실습을 위한 기초 교육 자료로 안드로이드 취약점 항목을 학습하고 실습할 수 있는 애플리케이션입니다.
-<img src="https://github.com/user-attachments/assets/b7a9f845-1562-4417-918e-a056cd1b8564.png" width="200" height="400"/>
-<img src="https://github.com/user-attachments/assets/4cf2b93d-1002-4b49-8334-406248cfd4b5.png" width="200" height="400"/>
+
+<div style ="text-align:center";>
+<img src="https://github.com/user-attachments/assets/274364fe-4306-49e0-8ff2-c518a51f0538" width="250" height="500"/>
+
+<img src="https://github.com/user-attachments/assets/be1baf9b-79b6-404c-b5c8-d9d7ae136e4e" width="250" height="500"/>
+</div>
 
 # List
 - OS 변조 탐지 기능 적용 여부
