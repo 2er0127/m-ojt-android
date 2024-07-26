@@ -32,7 +32,7 @@
             android:id="@+id/noteContent"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="이 코드는 앱의 난독화 상태를 확인하는 기능을 제공합니다.\n사용자가 '난독화 상태 확인' 버튼을 클릭하면, 클래스 이름의 길이를 확인하여 2 이하이면 난독화된 것으로 간주됩니다."
+            android:text="해당 Activity는 앱의 난독화 상태를 확인합니다.\n현재 난독화는 해당 Activity에만 적용되어있습니다.\n\n소스 코드를 확인하여 난독화 코드를 확인하세요."
             android:textSize="13sp"
             android:textStyle="bold"
             android:textColor="#555555"

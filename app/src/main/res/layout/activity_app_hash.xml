@@ -32,7 +32,7 @@
             android:id="@+id/noteContent"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="앱 무결성 검증을 통해 보안성을 확인할 수 있습니다.\n이 기능은 앱의 변조 여부를 체크합니다."
+            android:text="해당 Activity는 앱의 변조 여부를 체크합니다.\n\n앱을 디컴파일하여 코드를 변조하고, 무결성 검증을 확인해보세요."
             android:textSize="13sp"
             android:textStyle="bold"
             android:textColor="#555555"

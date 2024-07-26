@@ -32,7 +32,7 @@
             android:id="@+id/noteContent"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="이 코드는 FLAG_SECURE 플래그를 사용하여 화면 보호 기능을 활성화하거나 비활성화합니다.\n해당 기능은 스크린샷/화면 녹화를 방지하는 데 사용됩니다."
+            android:text="해당 Activity는 FLAG_SECURE 플래그를 사용하여 화면 보호 기능이 구현되어 있습니다.\n \n버튼을 통해 활성화/비활성화의 차이와 소스 코드를 분석해보세요."
             android:textSize="13sp"
             android:textStyle="bold"
             android:textColor="#555555"
