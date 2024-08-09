@@ -1,12 +1,11 @@
 /*
- * Copyright (c) 2024 SK shieldus EQST Bosim
+ * Copyright (c) 2024 2er0.oz
  * Author: Seona Lee
- * EQST Bosim OJT Android Edu 2024.
  * All rights reserved.
  *
- * This software is the confidential and proprietary information of EQST Bosim.
- * You shall not disclose such confidential information and shall use it only
- * in accordance with the terms of the license agreement you entered into with EQST Bosim.
+ * This software contains confidential and proprietary information of 2er0.oz.
+ * Any unauthorized copying, disclosure, or use of this information is strictly prohibited.
+ * Use of this software is governed by the terms of the license agreement you have entered into with 2er0.oz.
  */
 
 package com.eqst.vulnlab

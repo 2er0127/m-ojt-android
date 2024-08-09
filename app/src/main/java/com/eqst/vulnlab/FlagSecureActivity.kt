@@ -1,3 +1,13 @@
+/*
+ * Copyright (c) 2024 2er0.oz
+ * Author: Seona Lee
+ * All rights reserved.
+ *
+ * This software contains confidential and proprietary information of 2er0.oz.
+ * Any unauthorized copying, disclosure, or use of this information is strictly prohibited.
+ * Use of this software is governed by the terms of the license agreement you have entered into with 2er0.oz.
+ */
+
 package com.eqst.vulnlab
 
 import android.annotation.SuppressLint
@@ -10,8 +20,6 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
-// Seona Lee
-// EQST Bosim OJT Android Edu 2024.
 class FlagSecureActivity : AppCompatActivity() {
     private lateinit var sharedPreferences: SharedPreferences
 

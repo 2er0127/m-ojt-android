@@ -131,7 +131,7 @@
         android:id="@+id/footerTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Copyright (c) 2024 SK shieldus EQST Bosim"
+        android:text="Copyright (c) 2024 2er0.oz"
         android:textSize="14sp"
         android:padding="16dp"
         android:gravity="center"
