@@ -18,9 +18,9 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="260dp"
+        android:layout_width="400dp"
         android:layout_height="wrap_content"
-        android:src="@drawable/eqst_logo"
+        android:src="@drawable/main_logo"
         android:adjustViewBounds="true"
         android:scaleType="centerCrop"
         android:layout_marginTop="16dp"
