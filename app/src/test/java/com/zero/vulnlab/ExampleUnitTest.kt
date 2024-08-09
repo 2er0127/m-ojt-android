@@ -1,4 +1,4 @@
-package com.eqst.vulnlab
+package com.zero.vulnlab
 
 import org.junit.Test
 

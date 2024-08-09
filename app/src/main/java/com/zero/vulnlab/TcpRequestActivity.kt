@@ -8,7 +8,7 @@
  * Use of this software is governed by the terms of the license agreement you have entered into with 2er0.oz.
  */
 
-package com.eqst.vulnlab
+package com.zero.vulnlab
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

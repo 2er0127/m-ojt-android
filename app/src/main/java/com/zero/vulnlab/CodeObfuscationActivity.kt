@@ -8,7 +8,7 @@
  * Use of this software is governed by the terms of the license agreement you have entered into with 2er0.oz.
  */
 
-package com.eqst.vulnlab
+package com.zero.vulnlab
 
 import android.annotation.SuppressLint
 import android.os.Bundle
@@ -16,7 +16,6 @@ import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import java.lang.reflect.Modifier
 
 class CodeObfuscationActivity : AppCompatActivity() {
     @SuppressLint("MissingInflatedId")

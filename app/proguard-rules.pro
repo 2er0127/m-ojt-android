@@ -1,30 +1,30 @@
 -keepattributes *Annotation*
 
--keep class com.eqst.vulnlab.MainActivity { *; }
--keep class com.eqst.vulnlab.AppHashActivity { *; }
--keep class com.eqst.vulnlab.DatabaseController { *; }
--keep class com.eqst.vulnlab.DebugActivity { *; }
--keep class com.eqst.vulnlab.DeepLinkActivity { *; }
--keep class com.eqst.vulnlab.DeepLinkViewActivity { *; }
--keep class com.eqst.vulnlab.ExportedActivity { *; }
--keep class com.eqst.vulnlab.FlagSecureActivity { *; }
--keep class com.eqst.vulnlab.IsRootedActivity { *; }
--keep class com.eqst.vulnlab.LoginActivity { *; }
--keep class com.eqst.vulnlab.RegisterActivity { *; }
--keep class com.eqst.vulnlab.SharedPreActivity { *; }
--keep class com.eqst.vulnlab.TcpRequestActivity { *; }
--keep class com.eqst.vulnlab.TCPServer { *; }
--keep class com.eqst.vulnlab.TCPClient { *; }
--keep class com.eqst.vulnlab.UserListActivity { *; }
--keep class com.eqst.vulnlab.User { *; }
--keep class com.eqst.vulnlab.UserDatabase { *; }
--keep class com.eqst.vulnlab.UserAdapter { *; }
+-keep class com.zero.vulnlab.MainActivity { *; }
+-keep class com.zero.vulnlab.AppHashActivity { *; }
+-keep class com.zero.vulnlab.DatabaseController { *; }
+-keep class com.zero.vulnlab.DebugActivity { *; }
+-keep class com.zero.vulnlab.DeepLinkActivity { *; }
+-keep class com.zero.vulnlab.DeepLinkViewActivity { *; }
+-keep class com.zero.vulnlab.ExportedActivity { *; }
+-keep class com.zero.vulnlab.FlagSecureActivity { *; }
+-keep class com.zero.vulnlab.IsRootedActivity { *; }
+-keep class com.zero.vulnlab.LoginActivity { *; }
+-keep class com.zero.vulnlab.RegisterActivity { *; }
+-keep class com.zero.vulnlab.SharedPreActivity { *; }
+-keep class com.zero.vulnlab.TcpRequestActivity { *; }
+-keep class com.zero.vulnlab.TCPServer { *; }
+-keep class com.zero.vulnlab.TCPClient { *; }
+-keep class com.zero.vulnlab.UserListActivity { *; }
+-keep class com.zero.vulnlab.User { *; }
+-keep class com.zero.vulnlab.UserDatabase { *; }
+-keep class com.zero.vulnlab.UserAdapter { *; }
 
--keepclassmembers class com.eqst.vulnlab.CodeObfuscationActivity {
+-keepclassmembers class com.zero.vulnlab.CodeObfuscationActivity {
     public *;
 }
 
--keepnames class !com.eqst.vulnlab.CodeObfuscationActivity
+-keepnames class !com.zero.vulnlab.CodeObfuscationActivity
 -renamesourcefileattribute SourceFile
 -keepattributes SourceFile,LineNumberTable
 

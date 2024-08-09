@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.eqst.vulnlab">
+    package="com.zero.vulnlab">
 
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
@@ -13,25 +13,25 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
 
-        <activity android:name=".LoginActivity" android:exported="true">
+        <activity android:name="com.zero.vulnlab.LoginActivity" android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".RegisterActivity" />
-        <activity android:name=".MainActivity" />
-        <activity android:name=".IsRootedActivity"/>
-        <activity android:name=".AppHashActivity"/>
-        <activity android:name=".CodeObfuscationActivity"/>
-        <activity android:name=".SharedPreActivity"/>
-        <activity android:name=".ExportedActivity"/>
-        <activity android:name=".DebugActivity"/>
-        <activity android:name=".FlagSecureActivity"/>
-        <activity android:name=".TcpRequestActivity"/>
-        <activity android:name=".UserListActivity" android:exported="true"/>
-        <activity android:name=".DeepLinkActivity"/>
-        <activity android:name=".DeepLinkViewActivity" android:exported="true">
+        <activity android:name="com.zero.vulnlab.RegisterActivity" />
+        <activity android:name="com.zero.vulnlab.MainActivity" />
+        <activity android:name="com.zero.vulnlab.IsRootedActivity"/>
+        <activity android:name="com.zero.vulnlab.AppHashActivity"/>
+        <activity android:name="com.zero.vulnlab.CodeObfuscationActivity"/>
+        <activity android:name="com.zero.vulnlab.SharedPreActivity"/>
+        <activity android:name="com.zero.vulnlab.ExportedActivity"/>
+        <activity android:name="com.zero.vulnlab.DebugActivity"/>
+        <activity android:name="com.zero.vulnlab.FlagSecureActivity"/>
+        <activity android:name="com.zero.vulnlab.TcpRequestActivity"/>
+        <activity android:name="com.zero.vulnlab.UserListActivity" android:exported="true"/>
+        <activity android:name="com.zero.vulnlab.DeepLinkActivity"/>
+        <activity android:name="com.zero.vulnlab.DeepLinkViewActivity" android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />

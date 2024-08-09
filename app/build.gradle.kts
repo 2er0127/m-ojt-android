@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "com.eqst.vulnlab"
+    namespace = "com.zero.vulnlab"
     compileSdk = 33
 
     defaultConfig {
-        applicationId = "com.eqst.vulnlab"
+        applicationId = "com.zero.vulnlab"
         minSdk = 24
         targetSdk = 33
         versionCode = 1
