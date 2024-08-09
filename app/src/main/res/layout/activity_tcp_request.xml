@@ -8,7 +8,7 @@
         android:id="@+id/statusIsRequest"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="통신구간 암호화 적용 여부"
+        android:text="통신구간 암호화"
         android:textColor="@android:color/black"
         android:textSize="20sp"
         android:padding="10dp"

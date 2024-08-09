@@ -8,7 +8,7 @@
         android:id="@+id/statusIsFlag"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="백그라운드 화면 보호"
+        android:text="화면 보호"
         android:textColor="@android:color/black"
         android:textSize="20sp"
         android:padding="10dp"

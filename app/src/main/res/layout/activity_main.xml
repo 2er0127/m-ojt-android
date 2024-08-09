@@ -48,7 +48,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="55dp"
                 android:background="@drawable/btn_blue"
-                android:text="Q1. OS 변조 탐지 기능 적용 여부"
+                android:text="1. 루팅 탐지"
                 android:layout_marginBottom="8dp"
                 android:textStyle="bold" />
 
@@ -57,7 +57,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="55dp"
                 android:background="@drawable/btn_blue"
-                android:text="Q2. 프로그램 무결성 검증"
+                android:text="2. 앱 무결성 검증"
                 android:layout_marginBottom="8dp"
                 android:textStyle="bold" />
 
@@ -67,7 +67,7 @@
                 android:layout_height="55dp"
                 android:layout_marginBottom="8dp"
                 android:background="@drawable/btn_blue"
-                android:text="Q3. 소스코드 난독화 적용 여부"
+                android:text="3. 소스코드 난독화 적용"
                 android:textStyle="bold" />
 
             <Button
@@ -75,7 +75,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="55dp"
                 android:background="@drawable/btn_blue"
-                android:text="Q4. 디버깅 탐지기능 적용 여부"
+                android:text="4. 디버깅 탐지"
                 android:layout_marginBottom="8dp"
                 android:textStyle="bold" />
 
@@ -84,7 +84,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="55dp"
                 android:background="@drawable/btn_blue"
-                android:text="Q5. 화면 강제 실행에 의한 인증단계 우회"
+                android:text="5. 화면 강제 실행"
                 android:layout_marginBottom="8dp"
                 android:textStyle="bold" />
 
@@ -93,7 +93,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="55dp"
                 android:background="@drawable/btn_blue"
-                android:text="Q6. 백그라운드 화면 보호"
+                android:text="6. 화면 보호"
                 android:layout_marginBottom="8dp"
                 android:textStyle="bold" />
 
@@ -102,7 +102,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="55dp"
                 android:background="@drawable/btn_blue"
-                android:text="Q7. 단말기 및 소스코드 내 중요정보 노출 여부"
+                android:text="7. 단말기 내 중요정보 노출"
                 android:layout_marginBottom="8dp"
                 android:textStyle="bold" />
 
@@ -111,7 +111,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="55dp"
                 android:background="@drawable/btn_blue"
-                android:text="Q8. 통신구간 암호화 적용 여부"
+                android:text="8. 통신구간 암호화"
                 android:layout_marginBottom="8dp"
                 android:textStyle="bold" />
 
@@ -120,7 +120,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="55dp"
                 android:background="@drawable/btn_blue"
-                android:text="Q9. Deep Link 취약점"
+                android:text="9. 딥링크"
                 android:layout_marginBottom="8dp"
                 android:textStyle="bold" />
 

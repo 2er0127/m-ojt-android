@@ -8,7 +8,7 @@
         android:id="@+id/infoTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="화면 강제 실행에 의한 인증단계 우회"
+        android:text="화면 강제 실행"
         android:textColor="@android:color/black"
         android:textSize="20sp"
         android:padding="10dp"

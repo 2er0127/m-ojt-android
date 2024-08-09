@@ -8,7 +8,7 @@
         android:id="@+id/statusIsRooted"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="OS 변조 탐지 기능 적용 여부"
+        android:text="루팅 탐지"
         android:textColor="@android:color/black"
         android:textSize="20sp"
         android:padding="10dp"
