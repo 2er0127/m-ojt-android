@@ -120,7 +120,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="55dp"
                 android:background="@drawable/btn_blue"
-                android:text="9. 딥링크"
+                android:text="9. URL 접근 취약점"
                 android:layout_marginBottom="8dp"
                 android:textStyle="bold" />
 
