@@ -107,11 +107,38 @@
                 android:textStyle="bold" />
 
             <Button
+                android:id="@+id/button10"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:background="@drawable/btn_blue"
+                android:text="8. 소스코드 내 중요정보 노출"
+                android:layout_marginBottom="8dp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/button11"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:background="@drawable/btn_blue"
+                android:text="9. 메모리 내 중요정보 노출"
+                android:layout_marginBottom="8dp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/button12"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:background="@drawable/btn_blue"
+                android:text="10. 디버그 로그 내 중요정보 노출"
+                android:layout_marginBottom="8dp"
+                android:textStyle="bold" />
+
+            <Button
                 android:id="@+id/button8"
                 android:layout_width="match_parent"
                 android:layout_height="55dp"
                 android:background="@drawable/btn_blue"
-                android:text="8. 통신구간 암호화"
+                android:text="11. 통신구간 암호화"
                 android:layout_marginBottom="8dp"
                 android:textStyle="bold" />
 
@@ -120,7 +147,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="55dp"
                 android:background="@drawable/btn_blue"
-                android:text="9. URL 접근 취약점"
+                android:text="12. URL 접근 취약점"
                 android:layout_marginBottom="8dp"
                 android:textStyle="bold" />
 
@@ -131,7 +158,7 @@
         android:id="@+id/footerTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Copyright (c) 2024 2er0.oz"
+        android:text="Copyright (c) 2024 SEONA LEE"
         android:textSize="14sp"
         android:padding="16dp"
         android:gravity="center"

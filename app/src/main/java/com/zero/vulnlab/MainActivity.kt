@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity() {
         loggedInUserTextView = findViewById(R.id.loggedInUserTextView)
 
         val username = intent.getStringExtra("username") ?: ""
-        loggedInUserTextView.text = "현재 { ${username} } 사용자가 로그인 중입니다."
+        loggedInUserTextView.text = "현재 [ ${username} ] 사용자가 로그인 중입니다."
 
         val button1: Button = findViewById(R.id.button1)
         val button2: Button = findViewById(R.id.button2)
@@ -39,6 +39,9 @@ class MainActivity : AppCompatActivity() {
         val button7: Button = findViewById(R.id.button7)
         val button8: Button = findViewById(R.id.button8)
         val button9: Button = findViewById(R.id.button9)
+        val button10: Button = findViewById(R.id.button10)
+        val button11: Button = findViewById(R.id.button11)
+        val button12: Button = findViewById(R.id.button12)
 
         button1.setOnClickListener { startButton1Activity() }
         button2.setOnClickListener { startButton2Activity() }
@@ -49,6 +52,9 @@ class MainActivity : AppCompatActivity() {
         button7.setOnClickListener { startButton7Activity() }
         button8.setOnClickListener { startButton8Activity() }
         button9.setOnClickListener { startButton9Activity() }
+        button10.setOnClickListener { startButton10Activity() }
+        button11.setOnClickListener { startButton11Activity() }
+        button12.setOnClickListener { startButton12Activity() }
 
         if (username == "admin") {
             val userListButton = Button(this).apply {
@@ -101,6 +107,21 @@ class MainActivity : AppCompatActivity() {
 
     private fun startButton9Activity() {
         val intent = Intent(this, DeepLinkActivity::class.java)
+        startActivity(intent)
+    }
+
+    private fun startButton10Activity() {
+        val intent = Intent(this, HardcodeDataActivity::class.java)
+        startActivity(intent)
+    }
+
+    private fun startButton11Activity() {
+        val intent = Intent(this, MemoryLeakActivity::class.java)
+        startActivity(intent)
+    }
+
+    private fun startButton12Activity() {
+        val intent = Intent(this, LogLeakActivity::class.java)
         startActivity(intent)
     }
 

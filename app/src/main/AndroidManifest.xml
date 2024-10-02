@@ -25,6 +25,9 @@
         <activity android:name="com.zero.vulnlab.AppHashActivity"/>
         <activity android:name="com.zero.vulnlab.CodeObfuscationActivity"/>
         <activity android:name="com.zero.vulnlab.SharedPreActivity"/>
+        <activity android:name="com.zero.vulnlab.HardcodeDataActivity"/>
+        <activity android:name="com.zero.vulnlab.MemoryLeakActivity"/>
+        <activity android:name="com.zero.vulnlab.LogLeakActivity"/>
         <activity android:name="com.zero.vulnlab.ExportedActivity"/>
         <activity android:name="com.zero.vulnlab.DebugActivity"/>
         <activity android:name="com.zero.vulnlab.FlagSecureActivity"/>

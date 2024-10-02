@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/infoTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="소스코드 내 중요정보 노출"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        android:padding="10dp"
+        android:paddingTop="20dp"
+        android:layout_marginTop="8dp"
+        android:textStyle="bold"
+        android:gravity="center" />
+
+    <RelativeLayout
+        android:id="@+id/noteLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/infoTextView"
+        android:background="@drawable/note_background"
+        android:padding="16dp"
+        android:layout_margin="16dp"
+        android:layout_marginTop="4dp"
+        android:elevation="4dp">
+
+        <TextView
+            android:id="@+id/noteContent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="소스 코드 내 중요정보를 찾아보세요!"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:textColor="#555555"
+            android:gravity="center"/>
+
+    </RelativeLayout>
+
+
+    <TextView
+        android:id="@+id/footerTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Copyright (c) 2024 SEONA LEE"
+        android:textSize="14sp"
+        android:padding="16dp"
+        android:gravity="center"
+        android:layout_alignParentBottom="true" />
+
+</RelativeLayout>
