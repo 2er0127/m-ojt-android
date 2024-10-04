@@ -8,7 +8,7 @@
         android:id="@+id/statusIsFlag"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="화면 보호"
+        android:text="문제 6. 화면 보호"
         android:textColor="@android:color/black"
         android:textSize="20sp"
         android:padding="10dp"
@@ -32,7 +32,7 @@
             android:id="@+id/noteContent"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="해당 Activity는 FLAG_SECURE 플래그를 사용하여 화면 보호 기능이 구현되어 있습니다.\n \n버튼을 통해 활성화/비활성화의 차이와 소스 코드를 분석해보세요."
+            android:text="해당 Activity에는 화면 보호 기능이 활성화되어 있습니다.\n\n화면 보호 활성화/비활성화의 차이를 확인하세요."
             android:textSize="13sp"
             android:textStyle="bold"
             android:textColor="#555555"
@@ -40,11 +40,21 @@
 
     </RelativeLayout>
 
+    <TextView
+        android:id="@+id/flagIsStatus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/noteLayout"
+        android:gravity="center"
+        android:padding="11dp"
+        android:text="status"
+        android:textColor="@android:color/holo_blue_dark" />
+
     <Button
         android:id="@+id/enableProtectionButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/noteLayout"
+        android:layout_below="@id/flagIsStatus"
         android:text="화면 보호 활성화"
         android:layout_marginTop="8dp"
         android:background="@drawable/btn_blue"
@@ -64,27 +74,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/disableProtectionButton"
-        android:text="현재 로그인된 아이디: \n비밀번호: "
+        android:text="현재 로그인된 아이디 : \n비밀번호 : "
         android:textColor="@android:color/black"
         android:textSize="16sp"
         android:padding="16dp" />
-
-
-    <TextView
-        android:id="@+id/flagIsStatus"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/simTextView"
-        android:gravity="center"
-        android:padding="15dp"
-        android:text="status"
-        android:textColor="@android:color/holo_blue_dark" />
 
     <TextView
         android:id="@+id/footerTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Copyright (c) 2024 2er0.oz"
+        android:text="© 2024 SEONA LEE"
         android:textSize="14sp"
         android:padding="16dp"
         android:gravity="center"

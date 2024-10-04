@@ -35,6 +35,13 @@ class FlagSecureActivity : AppCompatActivity() {
         val disableProtectionButton: Button = findViewById(R.id.disableProtectionButton)
         val simTextView: TextView = findViewById(R.id.simTextView)
 
+        window.setFlags(
+            WindowManager.LayoutParams.FLAG_SECURE,
+            WindowManager.LayoutParams.FLAG_SECURE
+        )
+        statusTextView.text = "화면 보호 활성화"
+        Toast.makeText(this, "화면 보호가 기본적으로 활성화되어 있습니다.", Toast.LENGTH_SHORT).show()
+
         enableProtectionButton.setOnClickListener {
             window.setFlags(
                 WindowManager.LayoutParams.FLAG_SECURE,
@@ -47,11 +54,12 @@ class FlagSecureActivity : AppCompatActivity() {
         disableProtectionButton.setOnClickListener {
             window.clearFlags(WindowManager.LayoutParams.FLAG_SECURE)
             statusTextView.text = "화면 보호 비활성화"
-            Toast.makeText(this, "화면 보호가 비활성화 되었습니다.", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "화면 보호가 비활성화되었습니다.", Toast.LENGTH_SHORT).show()
         }
 
         val username = sharedPreferences.getString("username", "Unknown")
         val password = sharedPreferences.getString("password", "Unknown")
-        simTextView.text = "현재 로그인된 아이디: $username\n비밀번호: $password"
+        simTextView.text = "현재 로그인된 아이디 : $username\n비밀번호 : $password"
     }
 }
+
