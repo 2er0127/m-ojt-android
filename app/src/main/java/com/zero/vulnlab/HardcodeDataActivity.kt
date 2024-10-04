@@ -24,5 +24,6 @@ class HardcodeDataActivity : AppCompatActivity() {
 
         Log.d("HardcodeDataActivity", "test ID: $testID")
         Log.d("HardcodeDataActivity", "test Password: $testPassword")
+        Log.d("HardcodeDataActivity", "해당 계정으로 로그인도 가능!")
     }
 }

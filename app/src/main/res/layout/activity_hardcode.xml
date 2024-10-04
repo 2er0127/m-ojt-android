@@ -8,7 +8,7 @@
         android:id="@+id/infoTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="소스코드 내 중요정보 노출"
+        android:text="문제 8. 소스코드 내 중요정보 노출"
         android:textColor="@android:color/black"
         android:textSize="20sp"
         android:padding="10dp"
@@ -32,7 +32,7 @@
             android:id="@+id/noteContent"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="소스 코드 내 중요정보를 찾아보세요!"
+            android:text="소스 코드 내 중요정보를 찾아보세요."
             android:textSize="13sp"
             android:textStyle="bold"
             android:textColor="#555555"
@@ -40,12 +40,11 @@
 
     </RelativeLayout>
 
-
     <TextView
         android:id="@+id/footerTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Copyright (c) 2024 SEONA LEE"
+        android:text="© 2024 SEONA LEE"
         android:textSize="14sp"
         android:padding="16dp"
         android:gravity="center"
