@@ -20,7 +20,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/userListTitleTextView"
-        android:text="관리자만 접근 가능한 페이지입니다...\n사용자를 삭제하지 마세요..."
+        android:text="관리자 페이지입니다 !!!\n사용자를 삭제하지 말아주세요...🥹"
         android:textColor="@android:color/black"
         android:textSize="16sp"
         android:padding="16dp" />
@@ -35,7 +35,7 @@
         android:id="@+id/footerTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Copyright (c) 2024 2er0.oz"
+        android:text="© 2024 SEONA LEE"
         android:textSize="14sp"
         android:padding="16dp"
         android:gravity="center"
