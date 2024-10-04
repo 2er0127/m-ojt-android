@@ -32,7 +32,7 @@
             android:id="@+id/noteContent"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="메모리 내 중요정보를 찾아보세요."
+            android:text="메모리 내 중요정보 노출 여부를 점검하세요."
             android:textSize="13sp"
             android:textStyle="bold"
             android:textColor="#555555"
