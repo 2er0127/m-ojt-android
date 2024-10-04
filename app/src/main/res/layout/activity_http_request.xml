@@ -1,0 +1,76 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/statusIsRequest"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="문제 11. 통신구간 암호화"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        android:padding="10dp"
+        android:paddingTop="20dp"
+        android:layout_marginTop="8dp"
+        android:textStyle="bold"
+        android:gravity="center" />
+
+    <RelativeLayout
+        android:id="@+id/noteLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/statusIsRequest"
+        android:background="@drawable/note_background"
+        android:padding="16dp"
+        android:layout_margin="16dp"
+        android:layout_marginTop="4dp"
+        android:elevation="4dp">
+
+        <TextView
+            android:id="@+id/noteContent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="해당 Activity에서는 HTTP 통신을 하고 있습니다.\n\n가상의 아이디와 비밀번호를 입력하여 로그인 했을 때, 통신 패킷의 암호화 여부를 점검하세요."
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:textColor="#555555"
+            android:gravity="center"/>
+
+    </RelativeLayout>
+
+    <EditText
+        android:id="@+id/usernameEditText"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:hint="아이디"
+        android:layout_below="@id/noteLayout" />
+
+    <EditText
+        android:id="@+id/passwordEditText"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:hint="비밀번호"
+        android:layout_below="@id/usernameEditText"
+        android:inputType="textPassword" />
+
+    <Button
+        android:id="@+id/loginButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="로그인"
+        android:layout_below="@id/passwordEditText"
+        android:textStyle="bold"
+        android:background="@drawable/btn_blue" />
+
+    <TextView
+        android:id="@+id/footerTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="© 2024 SEONA LEE"
+        android:textSize="14sp"
+        android:padding="16dp"
+        android:gravity="center"
+        android:layout_alignParentBottom="true" />
+
+</RelativeLayout>

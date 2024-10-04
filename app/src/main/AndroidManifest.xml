@@ -31,7 +31,7 @@
         <activity android:name="com.zero.vulnlab.ExportedActivity"/>
         <activity android:name="com.zero.vulnlab.DebugActivity"/>
         <activity android:name="com.zero.vulnlab.FlagSecureActivity"/>
-        <activity android:name="com.zero.vulnlab.TcpRequestActivity"/>
+        <activity android:name="com.zero.vulnlab.HttpRequestActivity"/>
         <activity android:name="com.zero.vulnlab.UserListActivity" android:exported="true"/>
         <activity android:name="com.zero.vulnlab.DeepLinkActivity"/>
         <activity android:name="com.zero.vulnlab.DeepLinkViewActivity" android:exported="true">
