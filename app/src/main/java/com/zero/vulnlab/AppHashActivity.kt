@@ -10,88 +10,61 @@
 
 package com.zero.vulnlab
 
-import android.annotation.SuppressLint
+import android.content.pm.PackageManager
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import java.util.zip.ZipFile
-import java.io.File
+import java.security.MessageDigest
 
 class AppHashActivity : AppCompatActivity() {
-    @SuppressLint("MissingInflatedId")
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_app_hash)
 
-        val statusTextView: TextView = findViewById(R.id.hashIsStatus)
         val checkIntegrityButton: Button = findViewById(R.id.checkIntegrityButton)
+        val hashOriStatus: TextView = findViewById(R.id.hashOriStatus)
+        val hashIsStatus: TextView = findViewById(R.id.hashIsStatus)
 
-        saveDexCrc()
+        val originalHash = "99ba6bbc3bac06ff48216e4eb1b4ad1e9d11a10bb0843278bddc1442089beb76"
+
+        hashOriStatus.text = originalHash
 
         checkIntegrityButton.setOnClickListener {
-            val isAppIntegrityValid = checkAppIntegrity()
-            if (isAppIntegrityValid) {
-                statusTextView.text = "앱 무결성 검증 성공"
-                Toast.makeText(this, "무결성 검증 성공", Toast.LENGTH_SHORT).show()
-            } else {
-                statusTextView.text = "앱 무결성 검증 실패"
-                Toast.makeText(this, "무결성 검증 실패", Toast.LENGTH_SHORT).show()
+            try {
+                val currentHash = getAppHash()
+
+                hashIsStatus.text = currentHash
+
+                if (currentHash.equals(originalHash, ignoreCase = true)) {
+                    Toast.makeText(this, "무결성 검증 성공", Toast.LENGTH_LONG).show()
+                } else {
+                    Toast.makeText(this, "무결성 검증 실패", Toast.LENGTH_LONG).show()
+                }
+            } catch (e: Exception) {
+                Toast.makeText(this, "오류 발생: ${e.message}", Toast.LENGTH_LONG).show()
             }
         }
     }
 
-    private fun checkAppIntegrity(): Boolean {
-        val dexCrcFromFile = readDexCrcFromFile()
-        val dexCrc = calculateDexCrc()
-        return dexCrc != null && dexCrc == dexCrcFromFile
-    }
-
-    private fun calculateDexCrc(): Long? {
-        return try {
-            val packageManager = packageManager
-            val packageName = packageName
-            val packageInfo = packageManager.getPackageInfo(packageName, 0)
-            val apkPath = packageInfo.applicationInfo.sourceDir
-            val zipFile = ZipFile(apkPath)
-            val dexEntry = zipFile.getEntry("classes.dex")
-            val dexCrc = dexEntry.crc
-            zipFile.close()
-            dexCrc
-        } catch (e: Exception) {
-            e.printStackTrace()
-            null
+    private fun getAppHash(): String {
+        val packageInfo = packageManager.getPackageInfo(packageName, PackageManager.GET_SIGNING_CERTIFICATES)
+        val signatures = if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.P) {
+            packageInfo.signingInfo.apkContentsSigners
+        } else {
+            packageInfo.signatures
         }
-    }
 
-    private fun readDexCrcFromFile(): Long? {
-        return try {
-            val file = File(filesDir, "dex_crc.txt")
-            if (!file.exists()) {
-                null
-            } else {
-                file.readText().toLong()
-            }
-        } catch (e: Exception) {
-            e.printStackTrace()
-            null
+        val md = MessageDigest.getInstance("SHA-256")
+        for (signature in signatures) {
+            md.update(signature.toByteArray())
         }
-    }
 
-    private fun writeDexCrcToFile(dexCrc: Long) {
-        try {
-            val file = File(filesDir, "dex_crc.txt")
-            file.writeText(dexCrc.toString())
-        } catch (e: Exception) {
-            e.printStackTrace()
-        }
-    }
-
-    private fun saveDexCrc() {
-        val dexCrc = calculateDexCrc()
-        if (dexCrc != null) {
-            writeDexCrcToFile(dexCrc)
-        }
+        val digest = md.digest()
+        return digest.joinToString("") { "%02x".format(it) }
     }
 }
+
+

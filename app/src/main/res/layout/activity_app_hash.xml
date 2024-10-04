@@ -32,7 +32,7 @@
             android:id="@+id/noteContent"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="해당 Activity에서는 앱의 변조 여부를 체크합니다.\n\n코드 변조 후, 무결성 검증을 확인하세요."
+            android:text="해당 Activity에서는 앱의 변조 여부를 체크합니다.\n\n코드 변조 후, 무결성 검증을 우회하세요."
             android:textSize="13sp"
             android:textStyle="bold"
             android:textColor="#555555"
@@ -51,10 +51,40 @@
         android:textStyle="bold" />
 
     <TextView
-        android:id="@+id/hashIsStatus"
+        android:id="@+id/hashOriText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/checkIntegrityButton"
+        android:gravity="center"
+        android:padding="15dp"
+        android:text="[Original Hash]"
+        android:textColor="@android:color/holo_blue_dark" />
+
+    <TextView
+        android:id="@+id/hashOriStatus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/hashOriText"
+        android:gravity="center"
+        android:padding="15dp"
+        android:text="status"
+        android:textColor="@android:color/holo_blue_dark" />
+
+    <TextView
+        android:id="@+id/hashIsText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/hashOriStatus"
+        android:gravity="center"
+        android:padding="15dp"
+        android:text="[Current Hash]"
+        android:textColor="@android:color/holo_blue_dark" />
+
+    <TextView
+        android:id="@+id/hashIsStatus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/hashIsText"
         android:gravity="center"
         android:padding="15dp"
         android:text="status"
