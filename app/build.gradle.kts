@@ -46,7 +46,7 @@ android {
 
     applicationVariants.all {
         outputs.all {
-            val appName = "Vuln Lab"
+            val appName = "VulnLab"
             val versionName = versionName
             val variantName = name
             val newApkName = "${appName}-${variantName}-v${versionName}.apk"

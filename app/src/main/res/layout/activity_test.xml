@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/statusIsRooted"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Root Detection"
+        android:textColor="@android:color/black"
+        android:textSize="24sp"
+        android:padding="10dp"
+        android:textStyle="bold"
+        android:gravity="center" />
+
+    <RelativeLayout
+        android:id="@+id/noteLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/statusIsRooted"
+        android:background="#FFF9C4"
+    android:padding="16dp"
+    android:layout_margin="16dp"
+    android:elevation="4dp"
+    android:gravity="center">
+
+    <TextView
+        android:id="@+id/noteContent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="This activity checks if your device is rooted.\n\nPlease bypass root detection."
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:textColor="#555555"
+        android:gravity="center"/>
+</RelativeLayout>
+
+    <Button
+        android:id="@+id/rootCheckButton"
+        android:layout_width="100dp"
+    android:layout_height="100dp"
+    android:layout_below="@id/noteLayout"
+    android:text="확인"
+    android:textStyle="bold"
+    android:textSize="16sp"
+    android:textColor="@android:color/white"
+    android:gravity="center" />
+    
+    <TextView
+android:id="@+id/rootIsStatus"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:layout_below="@id/rootCheckButton"
+android:gravity="center"
+android:padding="15dp"
+android:text="Root Status"
+android:textColor="@android:color/holo_blue_dark"
+android:textSize="16sp"/>
+
+<TextView
+android:id="@+id/footerTextView"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:text="© 2024 SEONA LEE"
+android:textSize="12sp"
+android:padding="16dp"
+android:gravity="center"
+android:layout_alignParentBottom="true" />
+    </RelativeLayout>
