@@ -1,3 +1,8 @@
+-keep class org.bouncycastle.jsse.** { *; }
+-keep class org.conscrypt.** { *; }
+-keep class org.openjsse.** { *; }
+-dontwarn okhttp3.internal.platform.**
+
 -keepattributes *Annotation*
 
 -keep class com.zero.vulnlab.MainActivity { *; }
@@ -12,7 +17,7 @@
 -keep class com.zero.vulnlab.LoginActivity { *; }
 -keep class com.zero.vulnlab.RegisterActivity { *; }
 -keep class com.zero.vulnlab.SharedPreActivity { *; }
--keep class com.zero.vulnlab.TcpRequestActivity { *; }
+-keep class com.zero.vulnlab.HttpRequestActivity { *; }
 -keep class com.zero.vulnlab.TCPServer { *; }
 -keep class com.zero.vulnlab.TCPClient { *; }
 -keep class com.zero.vulnlab.UserListActivity { *; }
