@@ -25,13 +25,11 @@ class DeepLinkActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_deep_link)
 
-        val sharedPreferences = getSharedPreferences("user_prefs", Context.MODE_PRIVATE)
-        val password = sharedPreferences.getString("password", "")
-
         val deepLinkButton: Button = findViewById(R.id.deepLinkButton)
         deepLinkButton.setOnClickListener {
-            val intent = Intent(Intent.ACTION_VIEW)
-            intent.data = Uri.parse("myapp://login?password=$password")
+            val intent = Intent(this, DeepLinkViewActivity::class.java)
+            val uri = Uri.parse("zeroapp://vulnlab.com?url=file:///android_asset/deeplink.html")
+            intent.data = uri
             startActivity(intent)
         }
     }

@@ -17,7 +17,7 @@
 -keep class com.zero.vulnlab.LoginActivity { *; }
 -keep class com.zero.vulnlab.RegisterActivity { *; }
 -keep class com.zero.vulnlab.SharedPreActivity { *; }
--keep class com.zero.vulnlab.HttpRequestActivity { *; }
+-keep class com.zero.vulnlab.TCPRequestActivity { *; }
 -keep class com.zero.vulnlab.TCPServer { *; }
 -keep class com.zero.vulnlab.TCPClient { *; }
 -keep class com.zero.vulnlab.UserListActivity { *; }

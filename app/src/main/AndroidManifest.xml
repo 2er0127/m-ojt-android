@@ -2,10 +2,13 @@
     package="com.zero.vulnlab">
 
     <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
+        android:usesCleartextTraffic="true"
+        android:networkSecurityConfig="@xml/network_security_config"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="Vuln Lab"
@@ -31,7 +34,7 @@
         <activity android:name="com.zero.vulnlab.ExportedActivity"/>
         <activity android:name="com.zero.vulnlab.DebugActivity"/>
         <activity android:name="com.zero.vulnlab.FlagSecureActivity"/>
-        <activity android:name="com.zero.vulnlab.HttpRequestActivity"/>
+        <activity android:name="com.zero.vulnlab.TCPRequestActivity"/>
         <activity android:name="com.zero.vulnlab.UserListActivity" android:exported="true"/>
         <activity android:name="com.zero.vulnlab.DeepLinkActivity"/>
         <activity android:name="com.zero.vulnlab.DeepLinkViewActivity" android:exported="true">
@@ -39,7 +42,7 @@
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
-                <data android:scheme="myapp" android:host="login" />
+                <data android:scheme="zeroapp" android:host="vulnlab.com" />
             </intent-filter>
         </activity>
     </application>

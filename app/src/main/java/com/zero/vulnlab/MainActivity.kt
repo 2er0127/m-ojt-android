@@ -101,7 +101,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun startButton8Activity() {
-        val intent = Intent(this, HttpRequestActivity::class.java)
+        val intent = Intent(this, TCPRequestActivity::class.java)
         startActivity(intent)
     }
 

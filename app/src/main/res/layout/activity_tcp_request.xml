@@ -31,7 +31,7 @@
             android:id="@+id/noteContent"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="해당 Activity에서는 HTTP 통신을 하고 있습니다.\n\n가상의 아이디와 비밀번호를 입력하여 로그인 했을 때, 통신 패킷의 암호화 여부를 점검하세요."
+            android:text="해당 Activity에서는 TCP 통신을 하고 있습니다.\n\n가상의 아이디와 비밀번호를 입력하여 로그인 했을 때, 통신 패킷의 암호화 여부를 점검하세요."
             android:textSize="13sp"
             android:textStyle="bold"
             android:textColor="#555555"
