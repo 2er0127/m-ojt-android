@@ -32,7 +32,7 @@
             android:id="@+id/noteContent"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="해당 Activity는 Deep Link를 사용하고 있습니다.\n\nHINT : CVE-2019-9140"
+            android:text="해당 Activity는 Deep Link를 사용하고 있습니다.\n\nMaybe the problem includes Easter eggs?"
             android:textSize="13sp"
             android:textStyle="bold"
             android:textColor="#555555"

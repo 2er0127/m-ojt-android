@@ -28,7 +28,7 @@ class DeepLinkActivity : AppCompatActivity() {
         val deepLinkButton: Button = findViewById(R.id.deepLinkButton)
         deepLinkButton.setOnClickListener {
             val intent = Intent(this, DeepLinkViewActivity::class.java)
-            val uri = Uri.parse("zeroapp://vulnlab.com?url=file:///android_asset/deeplink.html")
+            val uri = Uri.parse("zeroapp://vulnlab.com?url=file:///android_asset/encrypted_deeplink.html")
             intent.data = uri
             startActivity(intent)
         }
