@@ -8,7 +8,7 @@
         android:id="@+id/deeplinkText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="URL 접근 취약점"
+        android:text="문제 12. URL 접근 취약점"
         android:textColor="@android:color/black"
         android:textSize="20sp"
         android:padding="10dp"
