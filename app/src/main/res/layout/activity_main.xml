@@ -16,18 +16,6 @@
         android:padding="8dp"
         android:textStyle="bold" />
 
-    <!--<ImageView
-        android:id="@+id/imageView"
-        android:layout_width="400dp"
-        android:layout_height="wrap_content"
-        android:src="@drawable/kittttty_banner"
-        android:adjustViewBounds="true"
-        android:scaleType="centerCrop"
-        android:layout_marginTop="16dp"
-        android:layout_below="@id/loggedInUserTextView"
-        android:layout_marginBottom="16dp"
-        android:layout_centerHorizontal="true" />-->
-
     <ScrollView
         android:id="@+id/buttonScrollView"
         android:layout_width="match_parent"
