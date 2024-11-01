@@ -1,5 +1,7 @@
 # Info
-EQST OJT 안드로이드 앱 취약점 진단 실습을 위한 기초 교육 자료로 안드로이드 취약점 항목을 학습하고 실습할 수 있는 애플리케이션입니다.
+안드로이드 앱 취약점 진단 실습을 위한 기초 교육 자료로 안드로이드 취약점 항목을 학습하고 실습할 수 있는 애플리케이션입니다.
+
+APK 다운로드 >>> https://github.com/2er0127/zero-VulnLab
 
 <div align="center">
 <p align="center">
